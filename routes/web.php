@@ -16,6 +16,6 @@ Route::post('/logout', [BackController::class, 'logout'])->name('logout');
 
 // ADMIN
 
-Route::group(['prefix' => '/dashboard'], function () {
+Route::group(['prefix' => '/dashboard', 'middleware' => 'ceklogin'], function () {
     Route::get('/', [BackController::class, 'index'])->name('dashboard');
 });

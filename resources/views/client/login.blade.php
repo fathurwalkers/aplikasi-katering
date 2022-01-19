@@ -7,9 +7,9 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
-    <link rel="stylesheet" href="style/login.css" />
+    <link rel="stylesheet" href="{{ asset('tampilan') }}/style/login.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="style/all.min.css">
+    <link rel="stylesheet" href="{{ asset('tampilan') }}/style/all.min.css">
 
     <title>Halaman Login</title>
   </head>
@@ -24,7 +24,7 @@
         <div class="row mt-4">
           <div class="col-12 d-flex justify-content-center">
             <!-- <h2 class="display-1 fw-bold title text-lg-start text-center mb-4 pb-1 pt-2">E-Gizi</h2> -->
-            <img class="gambar img-thumbnail rounded-circle border-3" src="img/healthy-food.png" alt="gambar" />
+            <img class="gambar img-thumbnail rounded-circle border-3" src="{{ asset('tampilan') }}/img/healthy-food.png" alt="gambar" />
           </div>
           <div class="col-12 mt-5 pt-5">
             <form class="position-relative">
@@ -60,6 +60,6 @@
     <!-- akhir login -->
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <scr src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-      <script src="js/index.js"></script>
+      <script src="{{ asset('tampilan') }}/js/index.js"></script>
   </body>
 </html>
