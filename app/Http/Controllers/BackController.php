@@ -19,12 +19,12 @@ class BackController extends Controller
 
     public function login()
     {
-        return view('login');
+        return view('client/login');
     }
 
     public function register()
     {
-        return view('register');
+        return view('client/register');
     }
 
     public function postlogin(Request $request)
