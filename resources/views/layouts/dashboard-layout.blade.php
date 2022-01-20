@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <link rel="stylesheet" href="style/home.css" />
+    <link rel="stylesheet" href="{{ asset('tampilan') }}/style/home.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <title>Halaman Utama</title>
 
@@ -32,7 +32,7 @@
         <div class="akun-info col-12">
           <div class="card text-white rounded-0 sidenav">
             <div class="card-body pb-1 mt-3" id="navbarNav">
-              <img class="card-img-top gambar img-thumbnail rounded-circle" src="img/businessman.png" alt="user" />
+              <img class="card-img-top gambar img-thumbnail rounded-circle" src="{{ asset('tampilan') }}/img/businessman.png" alt="user" />
             </div>
             <div class="card-body mt-3 pt-0 mb-0" id="navbarNav">
               <p class="card-text mb-0">Awaluddin</p>
@@ -61,60 +61,11 @@
     <!-- end of sidebar nav -->
 
     <!-- konten menu -->
-    <section id="content" class="content py-5 d-flex justify-content-center align-items-center" style="min-height: 100%">
+    <section id="content" class="content py-5 d-flex justify-content-center mt-2" style="min-height: 100%">
       <div class="container">
-        <a href="daftar-makanan.html" class="card kartu mb-3 text-decoration-none bg-warning text-white p-0">
-          <div class="row g-0">
-            <div class="col-8">
-              <div class="card-body px-1">
-                <h5 class="card-title p-0 m-0">Daftar Makanan</h5>
-                <p class="card-text p-0 m-0">Berisi tentang rekomendasi makanan sehat bagi anak</p>
-              </div>
-            </div>
-            <div class="col-4 mx-auto my-auto text-center py-4">
-              <i style="font-size: 45px" class="fa fa-list p-0"></i>
-            </div>
-          </div>
-        </a>
-        <a href="hitung-gizi-anak.html" class="card mb-3 text-decoration-none hitung-gizi text-white p-0">
-          <div class="row g-0">
-            <div class="col-8">
-              <div class="card-body px-1">
-                <h5 class="card-title p-0 m-0">Hitung Gizi</h5>
-                <p class="card-text p-0 m-0">Menghitung status gizi anak</p>
-              </div>
-            </div>
-            <div class="col-4 mx-auto my-auto text-center py-4">
-              <i style="font-size: 45px" class="fa fa-calculator p-0"></i>
-            </div>
-          </div>
-        </a>
-        <a href="profil-grafik.html" class="card mb-3 text-decoration-none grafik text-white p-0">
-          <div class="row g-0">
-            <div class="col-8">
-              <div class="card-body px-1">
-                <h5 class="card-title p-0 m-0">Grafik Pertumbuhan</h5>
-                <p class="card-text p-0 m-0">Memonitoring gizi pertumbuhan anak setiap bulan</p>
-              </div>
-            </div>
-            <div class="col-4 mx-auto my-auto text-center py-4">
-              <i style="font-size: 45px" class="fa fa-chart-line p-0"></i>
-            </div>
-          </div>
-        </a>
-        <a href="status-gizi-anak.html" class="card mb-3 text-decoration-none status-gizi text-white p-0">
-          <div class="row g-0">
-            <div class="col-8">
-              <div class="card-body px-1">
-                <h5 class="card-title p-0 m-0">Status Gizi</h5>
-                <p class="card-text p-0 m-0">Untuk melihat status gizi anak</p>
-              </div>
-            </div>
-            <div class="col-4 mx-auto my-auto text-center py-4">
-              <i style="font-size: 45px" class="fa fa-list-alt p-0"></i>
-            </div>
-          </div>
-        </a>
+
+        @yield('main-content')
+
       </div>
     </section>
 
@@ -147,6 +98,6 @@
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="js/index.js"></script>
+    <script src="{{ asset('tampilan') }}/js/index.js"></script>
   </body>
 </html>
