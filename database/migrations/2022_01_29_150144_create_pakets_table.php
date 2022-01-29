@@ -6,26 +6,16 @@ use Illuminate\Support\Facades\Schema;
 
 class CreatePaketsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
-        Schema::create('pakets', function (Blueprint $table) {
+        Schema::create('paket', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
-        Schema::dropIfExists('pakets');
+        Schema::dropIfExists('paket');
     }
 }
