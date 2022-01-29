@@ -20,41 +20,50 @@
         <!-- <a href="login.html" class="mt-1 me-2 icon"><i class="bi bi-arrow-left"></i></a> -->
         <h5 class="mx-auto col-12 pb-0 mt-1 text-center">LOGIN</h5>
       </div>
-      <div class="container-fluid pt-5">
-        <div class="row mt-4">
-          <div class="col-12 d-flex justify-content-center">
-            <!-- <h2 class="display-1 fw-bold title text-lg-start text-center mb-4 pb-1 pt-2">E-Gizi</h2> -->
-            <img class="gambar img-thumbnail rounded-circle border-3" src="{{ asset('tampilan') }}/img/healthy-food.png" alt="gambar" />
-          </div>
-          <div class="col-12 mt-5 pt-5">
-            <form class="position-relative">
-              <div class="mb-3">
-                <input type="email" class="form-control bg-transparent border-0 border-bottom rounded-0 border-dark shadow-none ps-0 input" id="akun" required autocomplete="off" />
-                <label for="akun" class="email">Email</label>
+
+      <div class="container">
+          <div class="row">
+              <div class="col-12">
+
+                <div class="container-fluid pt-5">
+                    <div class="row mt-4">
+                      <div class="col-12 d-flex justify-content-center">
+                        <!-- <h2 class="display-1 fw-bold title text-lg-start text-center mb-4 pb-1 pt-2">E-Gizi</h2> -->
+                        <img class="gambar img-thumbnail rounded-circle border-3" src="{{ asset('tampilan') }}/img/healthy-food.png" alt="gambar" />
+                      </div>
+                      <div class="col-12 mt-5 pt-5">
+                        <form class="position-relative">
+                          <div class="mb-3">
+                            <input type="email" class="form-control bg-transparent border-0 border-bottom rounded-0 border-dark shadow-none ps-0 input" id="akun" required autocomplete="off" />
+                            <label for="akun" class="email">Email</label>
+                          </div>
+                          <div class="mt-3">
+                            <input type="password" class="form-control bg-transparent border-0 border-bottom rounded-0 border-dark shadow-none ps-0" id="sandi" required />
+                            <label for="sandi" class="password">Password</label>
+                            <span class="mata" onclick="showPass()">
+                              <i class="bi bi-eye-fill" id="hide1"></i>
+                              <i class="bi bi-eye-slash-fill" id="hide2"></i>
+                            </span>
+                          </div>
+                          <button type="submit" class="btn tombol text-white col-12 mt-4 rounded-pill">Simpan</button>
+                        </form>
+                      </div>
+                      <div class="col-12 text-center mt-2">
+                        <a href="lupa-password.html" class="text-dark forget">Lupa Password?</a>
+                      </div>
+                      <div class="col-12 text-center mt-3 d-flex justify-content-center">
+                        <hr />
+                        <p class="px-2">atau</p>
+                        <hr />
+                      </div>
+                      <div class="col-12 text-center daftar">
+                        <p>Belum punya akun ? Daftar <a href="registrasi.html">disini</a></p>
+                      </div>
+                    </div>
+                  </div>
+
               </div>
-              <div class="mt-3">
-                <input type="password" class="form-control bg-transparent border-0 border-bottom rounded-0 border-dark shadow-none ps-0" id="sandi" required />
-                <label for="sandi" class="password">Password</label>
-                <span class="mata" onclick="showPass()">
-                  <i class="bi bi-eye-fill" id="hide1"></i>
-                  <i class="bi bi-eye-slash-fill" id="hide2"></i>
-                </span>
-              </div>
-              <button type="submit" class="btn tombol text-white col-12 mt-4 rounded-pill">Simpan</button>
-            </form>
           </div>
-          <div class="col-12 text-center mt-2">
-            <a href="lupa-password.html" class="text-dark forget">Lupa Password?</a>
-          </div>
-          <div class="col-12 text-center mt-3 d-flex justify-content-center">
-            <hr />
-            <p class="px-2">atau</p>
-            <hr />
-          </div>
-          <div class="col-12 text-center daftar">
-            <p>Belum punya akun ? Daftar <a href="registrasi.html">disini</a></p>
-          </div>
-        </div>
       </div>
     </section>
     <!-- akhir login -->
