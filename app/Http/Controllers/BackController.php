@@ -30,6 +30,9 @@ class BackController extends Controller
     {
         $users = session('data_login');
         if ($users) {
+            if ($users->login_level == 'user') {
+                return redirect()->route('login');
+            }
             return redirect()->route('admin');
         }
         return view('admin/login-admin');

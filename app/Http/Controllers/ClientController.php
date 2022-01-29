@@ -8,6 +8,11 @@ class ClientController extends Controller
 {
     public function index()
     {
+        $users = session('data_login');
+        $level_user = $users->login_level;
+        if ($level_user == 'admin') {
+            return redirect()->route('admin');
+        }
         return view('client.index');
     }
 
