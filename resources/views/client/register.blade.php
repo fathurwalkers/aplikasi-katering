@@ -32,20 +32,36 @@
                         <img class="gambar img-thumbnail rounded-circle border-3" src="{{ asset('tampilan') }}/img/healthy-food.png" alt="gambar" />
                       </div>
                       <div class="col-12 mt-5 pt-5">
-                        <form class="position-relative">
-                          <div class="mb-3">
-                            <input type="email" class="form-control bg-transparent border-0 border-bottom rounded-0 border-dark shadow-none ps-0 input" id="akun" required autocomplete="off" />
-                            <label for="akun" class="email">Email</label>
-                          </div>
-                          <div class="mt-3">
-                            <input type="password" class="form-control bg-transparent border-0 border-bottom rounded-0 border-dark shadow-none ps-0" id="sandi" required />
-                            <label for="sandi" class="password">Password</label>
-                            <span class="mata" onclick="showPass()">
-                              <i class="bi bi-eye-fill" id="hide1"></i>
-                              <i class="bi bi-eye-slash-fill" id="hide2"></i>
-                            </span>
-                          </div>
-                          <button type="submit" class="btn tombol text-white col-12 mt-4 rounded-pill">Simpan</button>
+                        <form class="position-relative" action="{{ route('postregister') }}" method="POST">
+                            <div class="form-group mb-1">
+                                <label for="login_nama">Nama Lengkap</label>
+                                <input type="text" class="form-control" id="login_nama" aria-describedby="emailHelp" placeholder="Nama lengkap..." name="login_nama">
+                                <small id="emailHelp" class="form-text text-muted">Contoh : Raja</small>
+                            </div>
+                            <div class="form-group mb-1">
+                                <label for="login_email">Email</label>
+                                <input type="text" class="form-control" id="login_email" aria-describedby="emailHelp" placeholder="Email..." name="login_email">
+                                <small id="emailHelp" class="form-text text-muted">contoh : raja112233@gmail.com</small>
+                            </div>
+                            <div class="form-group mb-1">
+                                <label for="login_username">Username</label>
+                                <input type="text" class="form-control" id="login_username" aria-describedby="emailHelp" placeholder="Username..." name="login_username">
+                                <small id="emailHelp" class="form-text text-muted">Contoh : raja12345</small>
+                            </div>
+                            <div class="form-group mb-1">
+                                <label for="login_password">Password</label>
+                                <input type="password" class="form-control" id="login_password" aria-describedby="emailHelp" placeholder="Password..." name="login_password">
+                            </div>
+                            <div class="form-group mb-1">
+                                <label for="login_password2">Konfirmasi Password</label>
+                                <input type="password" class="form-control" id="login_password2" aria-describedby="emailHelp" placeholder="Konfirmasi Password..." name="login_password2">
+                            </div>
+                            <div class="form-group mb-1">
+                                <label for="login_telepon">Telepon</label>
+                                <input type="text" class="form-control" id="login_telepon" aria-describedby="emailHelp" placeholder="Telepon..." name="login_telepon">
+                                <small id="emailHelp" class="form-text text-muted">Contoh : 085495334956</small>
+                            </div>
+                            <button type="submit" class="btn tombol text-white col-12 mt-4 rounded-pill">Simpan</button>
                         </form>
                       </div>
                       <div class="col-12 text-center mt-2">

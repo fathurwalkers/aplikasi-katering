@@ -18,6 +18,7 @@ Route::get('/daftar-paket', [ClientController::class, 'daftar_paket'])->name('da
 Route::get('/detail-paket/{id}', [ClientController::class, 'detail_paket'])->name('detail-paket');
 Route::group(['prefix' => '/client', 'middleware' => 'ceklogin'], function () {
     Route::get('/', [ClientController::class, 'index'])->name('dashboard');
+    Route::get('/pemesanan', [ClientController::class, 'pemesanan'])->name('pemesanan');
 });
 
 // ADMIN

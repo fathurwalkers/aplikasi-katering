@@ -76,7 +76,6 @@ class BackController extends Controller
 
     public function postregister(Request $request)
     {
-        $login_data = new Login;
         $validatedLogin = $request->validate([
             'login_nama' => 'required',
             'login_username' => 'required',
@@ -93,7 +92,8 @@ class BackController extends Controller
         ]);
         $level = "user";
         $login_status = "verified";
-        $login_data = Login::create([
+        $login_data = new Login;
+        $save_login = $login_data->create([
             'login_nama' => $validatedLogin["login_nama"],
             'login_username' => $validatedLogin["login_username"],
             'login_password' => $hashPassword,
@@ -105,7 +105,7 @@ class BackController extends Controller
             'created_at' => now(),
             'updated_at' => now()
         ]);
-        $login_data->save();
+        $save_login->save();
         return redirect()->route('login')->with('status', 'Berhasil melakukan registrasi!');
     }
 }
