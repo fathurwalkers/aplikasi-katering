@@ -32,25 +32,26 @@
                         <img class="gambar img-thumbnail rounded-circle border-3" src="{{ asset('tampilan') }}/img/healthy-food.png" alt="gambar" />
                       </div>
                       <div class="col-12 mt-5 pt-5">
-                        <form class="position-relative">
+                        <form class="position-relative" action="{{ route('postlogin') }}" method="POST">
+                            @csrf
                           <div class="mb-3">
-                            <input type="email" class="form-control bg-transparent border-0 border-bottom rounded-0 border-dark shadow-none ps-0 input" id="akun" required autocomplete="off" />
-                            <label for="akun" class="email">Email</label>
+                            <input type="text" class="form-control bg-transparent border-0 border-bottom rounded-0 border-dark shadow-none ps-0 input" id="akun" required autocomplete="off" name="login_username" />
+                            <label for="akun" class="email">Username</label>
                           </div>
                           <div class="mt-3">
-                            <input type="password" class="form-control bg-transparent border-0 border-bottom rounded-0 border-dark shadow-none ps-0" id="sandi" required />
+                            <input type="password" class="form-control bg-transparent border-0 border-bottom rounded-0 border-dark shadow-none ps-0" id="sandi" required  name="login_password" />
                             <label for="sandi" class="password">Password</label>
                             <span class="mata" onclick="showPass()">
                               <i class="bi bi-eye-fill" id="hide1"></i>
                               <i class="bi bi-eye-slash-fill" id="hide2"></i>
                             </span>
                           </div>
-                          <button type="submit" class="btn tombol text-white col-12 mt-4 rounded-pill">Simpan</button>
+                          <button type="submit" class="btn tombol text-white col-12 mt-4 rounded-pill">MASUK</button>
                         </form>
                       </div>
-                      <div class="col-12 text-center mt-2">
+                      {{-- <div class="col-12 text-center mt-2">
                         <a href="lupa-password.html" class="text-dark forget">Lupa Password?</a>
-                      </div>
+                      </div> --}}
                       <div class="col-12 text-center mt-3 d-flex justify-content-center">
                         <hr />
                         <p class="px-2">atau</p>

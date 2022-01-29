@@ -14,7 +14,7 @@ class BackController extends Controller
 {
     public function index()
     {
-        return view('dashboard/index');
+        return view('client/index');
     }
 
     public function login()
@@ -25,6 +25,13 @@ class BackController extends Controller
     public function register()
     {
         return view('client/register');
+    }
+
+    public function logout(Request $request)
+    {
+        $request->session()->forget(['data_login']);
+        $request->session()->flush();
+        return redirect()->route('login')->with('status', 'Anda telah logout!');
     }
 
     public function postlogin(Request $request)

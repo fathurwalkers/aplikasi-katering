@@ -51,8 +51,15 @@
               <a class="nav-link" href="#">Bantuan</a>
             </li>
             <li class="nav-item d-flex px-2">
-              <i class="fas fa-sign-out-alt my-auto"></i>
-              <a class="nav-link" href="#">Keluar Akun</a>
+
+                <i class="fas fa-sign-out-alt my-auto"></i>
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button type="submit" class="nav-link btn btn-md dtn-danger">
+                        Keluar Akun
+                    </button>
+                </form>
+
             </li>
           </ul>
         </div>
@@ -84,13 +91,13 @@
         <li class="nav-item">
           <a class="nav-link active text-white py-0 d-flex flex-column" aria-current="page" href="daftar.html"
             ><i class="fas fa-list my-auto mx-auto"></i>
-            <p class="mb-0">Daftar anak</p>
+            <p class="mb-0">Daftar Paket</p>
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link active text-white py-0 d-flex flex-column" aria-current="page" href="data-akun.html"
             ><i class="fas fa-users my-auto mx-auto"></i>
-            <p class="mb-0">Data Akun</p>
+            <p class="mb-0">Pemesanan</p>
           </a>
         </li>
       </ul>
