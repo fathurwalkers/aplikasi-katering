@@ -21,8 +21,8 @@ class ClientController extends Controller
         return view('client.detail-paket');
     }
 
-    public function pemesanan()
+    public function pemesanan($id)
     {
-        echo "<marquee><h1><img src='https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,q_auto:best,w_640/v1511314480/ixomjefh9nstuooioykq.jpg'></h1></marquee>";
+        return view('client.pemesanan');
     }
 }

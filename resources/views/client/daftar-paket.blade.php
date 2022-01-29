@@ -26,7 +26,7 @@
                 <h5 class="card-title">Special title treatment</h5>
                 <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                 <div class="d-flex justify-content-end">
-                    <a href="#" class="btn btn-primary px-3">Selengkapnya</a>
+                    <a href="{{ route('detail-paket', '1') }}" class="btn btn-primary px-3">Selengkapnya</a>
                 </div>
             </div>
         </div>
@@ -38,7 +38,7 @@
                 <h5 class="card-title">Special title treatment</h5>
                 <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                 <div class="d-flex justify-content-end">
-                    <a href="#" class="btn btn-primary px-3">Selengkapnya</a>
+                    <a href="{{ route('detail-paket', '2') }}" class="btn btn-primary px-3">Selengkapnya</a>
                 </div>
             </div>
         </div>

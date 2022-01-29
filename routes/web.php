@@ -16,9 +16,9 @@ Route::post('/post-register', [BackController::class, 'postregister'])->name('po
 Route::post('/logout', [BackController::class, 'logout'])->name('logout');
 Route::get('/daftar-paket', [ClientController::class, 'daftar_paket'])->name('daftar-paket');
 Route::get('/detail-paket/{id}', [ClientController::class, 'detail_paket'])->name('detail-paket');
+Route::get('/pemesanan/{id}', [ClientController::class, 'pemesanan'])->name('pemesanan');
 Route::group(['prefix' => '/client', 'middleware' => 'ceklogin'], function () {
     Route::get('/', [ClientController::class, 'index'])->name('dashboard');
-    Route::get('/pemesanan', [ClientController::class, 'pemesanan'])->name('pemesanan');
 });
 
 // ADMIN
