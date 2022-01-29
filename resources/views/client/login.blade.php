@@ -29,11 +29,12 @@
                     <div class="row mt-4">
                       <div class="col-12 d-flex justify-content-center">
                         <!-- <h2 class="display-1 fw-bold title text-lg-start text-center mb-4 pb-1 pt-2">E-Gizi</h2> -->
-                        <img class="gambar img-thumbnail rounded-circle border-3" src="{{ asset('tampilan') }}/img/healthy-food.png" alt="gambar" />
+                        {{-- <img class="gambar img-thumbnail rounded-circle border-3" src="{{ asset('tampilan') }}/img/yeyen.png" alt="gambar" /> --}}
+                        <img class="" src="{{ asset('tampilan') }}/img/yeyen.png" alt="gambar" width="250px"/>
                       </div>
                       <div class="col-12 mt-5 pt-5">
                         @if (session('status'))
-                            <div class="alert alert-danger">
+                            <div class="alert alert-info">
                                 {{ session('status') }}
                             </div>
                         @endif
@@ -63,7 +64,7 @@
                         <hr />
                       </div>
                       <div class="col-12 text-center daftar">
-                        <p>Belum punya akun ? Daftar <a href="{{ route('register') }}">disini</a></p>
+                        <button class="btn tombol text-white col-12 mt-1 rounded-pill" type="button" onclick="window.location.href='{{ route('register') }}'">Daftar disini</button>
                       </div>
                     </div>
                   </div>

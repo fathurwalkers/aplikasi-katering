@@ -18,22 +18,22 @@
     <section id="logina" class="logina">
       <div class="col-12 login text-white py-2 fixed-top shadow-sm header">
         <!-- <a href="login.html" class="mt-1 me-2 icon"><i class="bi bi-arrow-left"></i></a> -->
-        <h5 class="mx-auto col-12 pb-0 mt-1 text-center">LOGIN</h5>
+        <h5 class="mx-auto col-12 pb-0 mt-1 text-center">REGISTRASI</h5>
       </div>
 
       <div class="container">
           <div class="row">
               <div class="col-12">
 
-                <div class="container-fluid pt-5">
+                <div class="container-fluid">
                     <div class="row mt-4">
                       <div class="col-12 d-flex justify-content-center">
                         <!-- <h2 class="display-1 fw-bold title text-lg-start text-center mb-4 pb-1 pt-2">E-Gizi</h2> -->
-                        <img class="gambar img-thumbnail rounded-circle border-3" src="{{ asset('tampilan') }}/img/healthy-food.png" alt="gambar" />
+                        {{-- <img class="gambar img-thumbnail rounded-circle border-3" src="{{ asset('tampilan') }}/img/healthy-food.png" alt="gambar" /> --}}
                       </div>
-                      <div class="col-12 mt-5 pt-5">
+                      <div class="col-12 mt-5">
                         @if (session('status'))
-                            <div class="alert alert-danger">
+                            <div class="alert alert-info">
                                 {{ session('status') }}
                             </div>
                         @endif
@@ -68,23 +68,22 @@
                                 <small id="emailHelp" class="form-text text-muted">Contoh : 085495334956</small>
                             </div>
                             <div class="form-group mb-1">
-                                <label for="login_alamat">Telepon</label>
-                                <input type="text" class="form-control" id="login_alamat" aria-describedby="emailHelp" placeholder="Telepon..." name="login_alamat" value="{{ old('login_alamat') }}">
-                                <small id="emailHelp" class="form-text text-muted">Contoh : 085495334956</small>
+                                <label for="login_alamat">Alamat</label>
+                                <input type="text" class="form-control" id="login_alamat" aria-describedby="emailHelp" placeholder="Alamat..." name="login_alamat" value="{{ old('login_alamat') }}">
+                                <small id="emailHelp" class="form-text text-muted">Contoh : Jl. Bakti Abri.
+                                    Bukit Wolio Indah, Kota Baubau
+                                </small>
                             </div>
                             <button type="submit" class="btn tombol text-white col-12 mt-4 rounded-pill">Simpan</button>
                         </form>
                       </div>
-                      <div class="col-12 text-center mt-2">
-                        <a href="lupa-password.html" class="text-dark forget">Lupa Password?</a>
-                      </div>
-                      <div class="col-12 text-center mt-3 d-flex justify-content-center">
+                      <div class="col-12 text-center mt-2 d-flex justify-content-center">
                         <hr />
                         <p class="px-2">atau</p>
                         <hr />
                       </div>
-                      <div class="col-12 text-center daftar">
-                        <p>Belum punya akun ? Daftar <a href="{{ route('login') }}">disini</a></p>
+                      <div class="col-12 text-center daftar mb-4">
+                        <button class="btn tombol text-white col-12 mt-1 rounded-pill" type="button" onclick="window.location.href='{{ route('login') }}'">Login disini</button>
                       </div>
                     </div>
                   </div>

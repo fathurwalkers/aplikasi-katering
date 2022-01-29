@@ -26,6 +26,15 @@ class BackController extends Controller
         return view('client/login');
     }
 
+    public function login_admin()
+    {
+        $users = session('data_login');
+        if ($users) {
+            return redirect()->route('admin');
+        }
+        return view('admin/login-admin');
+    }
+
     public function register()
     {
         return view('client/register');
@@ -33,9 +42,22 @@ class BackController extends Controller
 
     public function logout(Request $request)
     {
-        $request->session()->forget(['data_login']);
-        $request->session()->flush();
-        return redirect()->route('login')->with('status', 'Anda telah logout!');
+        $users = session('data_login');
+        switch ($users->login_level) {
+            case 'admin':
+                $request->session()->forget(['data_login']);
+                $request->session()->flush();
+                return redirect()->route('login-admin')->with('status', 'Anda telah logout!');
+                break;
+            case 'user':
+                $request->session()->forget(['data_login']);
+                $request->session()->flush();
+                return redirect()->route('login')->with('status', 'Anda telah logout!');
+                break;
+        }
+        // $request->session()->forget(['data_login']);
+        // $request->session()->flush();
+        // return redirect()->route('login')->with('status', 'Anda telah logout!');
     }
 
     public function postlogin(Request $request)
@@ -51,7 +73,7 @@ class BackController extends Controller
                 if ($data_login) {
                     if ($cek_password) {
                         $users = session(['data_login' => $data_login]);
-                        return redirect()->route('dashboard')->with('status', 'Berhasil Login!');
+                        return redirect()->route('admin')->with('status', 'Berhasil Login!');
                     }
                 }
                 break;
