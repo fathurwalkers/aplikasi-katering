@@ -14,12 +14,14 @@ Route::get('/register', [BackController::class, 'register'])->name('register');
 Route::post('/post-login', [BackController::class, 'postlogin'])->name('postlogin');
 Route::post('/post-register', [BackController::class, 'postregister'])->name('postregister');
 Route::post('/logout', [BackController::class, 'logout'])->name('logout');
+Route::get('/daftar-paket', [ClientController::class, 'daftar_paket'])->name('daftar-paket');
+Route::group(['prefix' => '/client', 'middleware' => 'ceklogin'], function () {
+    Route::get('/', [ClientController::class, 'index'])->name('dashboard');
+});
 
 // ADMIN
 
-Route::group(['prefix' => '/dashboard', 'middleware' => 'ceklogin'], function () {
-    Route::get('/', [BackController::class, 'index'])->name('dashboard');
-});
+
 // Route::group(['prefix' => '/dashboard'], function () {
 //     Route::get('/', [ClientController::class, 'index'])->name('dashboard');
 // });

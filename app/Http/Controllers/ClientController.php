@@ -10,4 +10,9 @@ class ClientController extends Controller
     {
         return view('client.index');
     }
+
+    public function daftar_paket()
+    {
+        return view('client.daftar-paket');
+    }
 }
