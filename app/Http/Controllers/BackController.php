@@ -84,7 +84,8 @@ class BackController extends Controller
             'login_username' => 'required',
             'login_password' => 'required',
             'login_email' => 'required',
-            'login_telepon' => 'required'
+            'login_telepon' => 'required',
+            'login_alamat' => 'required'
         ]);
 
         if ($validatedLogin["login_password"] !== $request->login_password2) {
@@ -107,6 +108,7 @@ class BackController extends Controller
             'login_password' => $hashPassword,
             'login_email' => $validatedLogin["login_email"],
             'login_telepon' => $validatedLogin["login_telepon"],
+            'login_alamat' => $validatedLogin["login_alamat"],
             'login_token' => $token,
             'login_level' => $level,
             'login_status' => $login_status,

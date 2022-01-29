@@ -10,6 +10,13 @@ class CreatePaketsTable extends Migration
     {
         Schema::create('paket', function (Blueprint $table) {
             $table->id();
+
+            $table->string('paket_nama')->nullable();
+            $table->integer('paket_harga')->nullable();
+            $table->longText('paket_info')->nullable();
+            $table->string('paket_kode')->nullable();
+            $table->string('paket_status')->nullable(); // Tersedia / Tidak Tersedia
+
             $table->timestamps();
         });
     }

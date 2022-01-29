@@ -67,6 +67,11 @@
                                 <input type="text" class="form-control" id="login_telepon" aria-describedby="emailHelp" placeholder="Telepon..." name="login_telepon" value="{{ old('login_telepon') }}">
                                 <small id="emailHelp" class="form-text text-muted">Contoh : 085495334956</small>
                             </div>
+                            <div class="form-group mb-1">
+                                <label for="login_alamat">Telepon</label>
+                                <input type="text" class="form-control" id="login_alamat" aria-describedby="emailHelp" placeholder="Telepon..." name="login_alamat" value="{{ old('login_alamat') }}">
+                                <small id="emailHelp" class="form-text text-muted">Contoh : 085495334956</small>
+                            </div>
                             <button type="submit" class="btn tombol text-white col-12 mt-4 rounded-pill">Simpan</button>
                         </form>
                       </div>
