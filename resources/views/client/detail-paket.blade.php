@@ -5,6 +5,11 @@
     .fontgreen {
         color: #3cfa0c;
     }
+
+    .bgheader {
+        background-color: #2bc75a;
+        color: #ffffff;
+    }
 </style>
 @endsection
 
@@ -19,7 +24,7 @@
 <div class="row">
     <div class="col-sm-6 mt-1">
         <div class="card mb-2">
-            <div class="card-title bg-info">
+            <div class="card-title bgheader">
                 <h5 class="mt-2 text-center">INFORMASI PAKET</h5>
             </div>
             <img class="card-img-top border-1" src="{{ asset('tampilan/img/paket1.jpg') }}" alt="">
