@@ -32,14 +32,19 @@
                         <img class="gambar img-thumbnail rounded-circle border-3" src="{{ asset('tampilan') }}/img/healthy-food.png" alt="gambar" />
                       </div>
                       <div class="col-12 mt-5 pt-5">
+                        @if (session('status'))
+                            <div class="alert alert-danger">
+                                {{ session('status') }}
+                            </div>
+                        @endif
                         <form class="position-relative" action="{{ route('postlogin') }}" method="POST">
                             @csrf
                           <div class="mb-3">
-                            <input type="text" class="form-control bg-transparent border-0 border-bottom rounded-0 border-dark shadow-none ps-0 input" id="akun" required autocomplete="off" name="login_username" />
+                            <input type="text" class="form-control bg-transparent border-0 border-bottom rounded-0 border-dark shadow-none ps-0 input" id="akun" required autocomplete="off" name="login_username" value="{{ old('login_username') }}"/>
                             <label for="akun" class="email">Username</label>
                           </div>
                           <div class="mt-3">
-                            <input type="password" class="form-control bg-transparent border-0 border-bottom rounded-0 border-dark shadow-none ps-0" id="sandi" required  name="login_password" />
+                            <input type="password" class="form-control bg-transparent border-0 border-bottom rounded-0 border-dark shadow-none ps-0" id="sandi" required  name="login_password"/>
                             <label for="sandi" class="password">Password</label>
                             <span class="mata" onclick="showPass()">
                               <i class="bi bi-eye-fill" id="hide1"></i>

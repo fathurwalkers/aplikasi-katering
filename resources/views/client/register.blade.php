@@ -32,6 +32,11 @@
                         <img class="gambar img-thumbnail rounded-circle border-3" src="{{ asset('tampilan') }}/img/healthy-food.png" alt="gambar" />
                       </div>
                       <div class="col-12 mt-5 pt-5">
+                        @if (session('status'))
+                            <div class="alert alert-danger">
+                                {{ session('status') }}
+                            </div>
+                        @endif
                         <form class="position-relative" action="{{ route('postregister') }}" method="POST">
                             @csrf
                             <div class="form-group mb-1">
@@ -51,11 +56,11 @@
                             </div>
                             <div class="form-group mb-1">
                                 <label for="login_password">Password</label>
-                                <input type="password" class="form-control" id="login_password" aria-describedby="emailHelp" placeholder="Password..." name="login_password" value="{{ old('login_password') }}">
+                                <input type="password" class="form-control" id="login_password" aria-describedby="emailHelp" placeholder="Password..." name="login_password">
                             </div>
                             <div class="form-group mb-1">
                                 <label for="login_password2">Konfirmasi Password</label>
-                                <input type="password" class="form-control" id="login_password2" aria-describedby="emailHelp" placeholder="Konfirmasi Password..." name="login_password2" value="{{ old('login_password2') }}">
+                                <input type="password" class="form-control" id="login_password2" aria-describedby="emailHelp" placeholder="Konfirmasi Password..." name="login_password2">
                             </div>
                             <div class="form-group mb-1">
                                 <label for="login_telepon">Telepon</label>

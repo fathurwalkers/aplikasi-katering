@@ -19,6 +19,10 @@ class BackController extends Controller
 
     public function login()
     {
+        $users = session('data_login');
+        if ($users) {
+            return redirect()->route('dashboard');
+        }
         return view('client/login');
     }
 
@@ -47,7 +51,7 @@ class BackController extends Controller
                 if ($data_login) {
                     if ($cek_password) {
                         $users = session(['data_login' => $data_login]);
-                        return redirect()->route('dashboard');
+                        return redirect()->route('dashboard')->with('status', 'Berhasil Login!');
                     }
                 }
                 break;
@@ -56,7 +60,7 @@ class BackController extends Controller
                 if ($data_login) {
                     if ($cek_password) {
                         $users = session(['data_login' => $data_login]);
-                        return redirect()->route('dashboard');
+                        return redirect()->route('dashboard')->with('status', 'Berhasil Login!');
                     }
                 }
                 break;
@@ -65,13 +69,12 @@ class BackController extends Controller
                 if ($data_login) {
                     if ($cek_password) {
                         $users = session(['data_login' => $data_login]);
-                        return redirect()->route('dashboard');
+                        return redirect()->route('dashboard')->with('status', 'Berhasil Login!');
                     }
                 }
                 break;
         }
-        return back()->with('
-        ', 'Maaf username atau password salah!')->withInput();
+        return back()->with('status', 'Maaf username atau password salah!')->withInput();
     }
 
     public function postregister(Request $request)
@@ -85,7 +88,7 @@ class BackController extends Controller
         ]);
 
         if ($validatedLogin["login_password"] !== $request->login_password2) {
-            return back()->withInput();
+            return back()->with('status', 'Password harus sama.')->withInput();
         }
 
         $hashPassword = Hash::make($validatedLogin["login_password"], [
