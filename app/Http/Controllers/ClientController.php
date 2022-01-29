@@ -15,4 +15,9 @@ class ClientController extends Controller
     {
         return view('client.daftar-paket');
     }
+
+    public function detail_paket(Request $request, $id)
+    {
+        return view('client.detail-paket');
+    }
 }
