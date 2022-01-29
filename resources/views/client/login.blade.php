@@ -57,7 +57,7 @@
                         <hr />
                       </div>
                       <div class="col-12 text-center daftar">
-                        <p>Belum punya akun ? Daftar <a href="registrasi.html">disini</a></p>
+                        <p>Belum punya akun ? Daftar <a href="{{ route('register') }}">disini</a></p>
                       </div>
                     </div>
                   </div>
@@ -68,7 +68,7 @@
     </section>
     <!-- akhir login -->
     <!-- Option 1: Bootstrap Bundle with Popper -->
-    <scr src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
       <script src="{{ asset('tampilan') }}/js/index.js"></script>
   </body>
 </html>
