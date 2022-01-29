@@ -70,7 +70,7 @@
 
     <!-- konten menu -->
     <section id="content" class="content py-5 d-flex justify-content-center mt-2" style="min-height: 100%">
-      <div class="container mb-2">
+      <div class="container mb-4">
 
         @yield('main-content')
 
