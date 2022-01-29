@@ -1,7 +1,11 @@
 @extends('layouts/dashboard-layout')
 
 @section('css')
-
+<style>
+    .fontgreen {
+        color: #3cfa0c;
+    }
+</style>
 @endsection
 
 @section('main-content')
@@ -18,13 +22,15 @@
             <div class="card-title bg-info">
                 <h5 class="mt-2 text-center">INFORMASI PAKET</h5>
             </div>
-            <img class="card-img-top border-1" src="https://st3.depositphotos.com/23594922/31822/v/600/depositphotos_318221368-stock-illustration-missing-picture-page-for-website.jpg" alt="">
+            <img class="card-img-top border-1" src="{{ asset('tampilan/img/paket1.jpg') }}" alt="">
             <div class="card-body">
                 <h5 class="card-title">Paket 400 Undangan</h5>
                 <p class="card-text">Deskripsi Paket</p>
-                <div class="d-flex justify-content-end mb-2">
-                    <p class="card-text">
-                        Harga : Rp. 20.000.000
+                <div class="d-flex justify-content-end">
+                    <p class="card-text mb-2">
+                        <b>
+                            Rp. <div class="fontgreen">&nbsp;20.000.000</div>
+                        </b>
                     </p>
                 </div>
                 <div class="d-flex justify-content-end">
