@@ -35,7 +35,30 @@
                             </div>
                         </div>
 
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 col-lg-12 mb-1">
+                                <img id="output_image" class="border border-1" width="250px"/>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <div class="form-group">
+                                    <label for="exampleFormControlFile1">Foto : </label>
+                                    <input type="file" class="form-control-file" onchange="preview_image(event)" name="foto">
+                                    <small class="form-text text-muted">Upload Pas Foto ekstensi .jpg</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mt-3 mb-4">
+                            <div class="col-sm-12 col-md-12 col-lg-12 d-flex justify-content-center">
+                                <button type="submit" class="btn btn-md btn-primary"> SIMPAN </button>
+                            </div>
+                            {{-- <div class="col-sm-12 col-md-12 col-lg-12 d-flex justify-content-center">
+                                <small class="form-text text-muted">Tekan tombol "SELESAI" Jika semua data telah benar</small>
+                            </div> --}}
+                        </div>
                     </form>
                 </div>
 
@@ -46,7 +69,14 @@
 @endsection
 
 @section('js')
-<script>
-
+<script type='text/javascript'>
+    function preview_image(event) {
+        var reader = new FileReader();
+        reader.onload = function() {
+                var output = document.getElementById('output_image');
+                output.src = reader.result;
+            }
+        reader.readAsDataURL(event.target.files[0]);
+    }
 </script>
 @endsection
