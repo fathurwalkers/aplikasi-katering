@@ -107,11 +107,28 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                         <li class="nav-item">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-th"></i>
+                                <i class="nav-icon fas fa-chart-pie"></i>
                                 <p>
                                     Paket
+                                    <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
+                            <ul class="nav nav-treeview" style="display: none;">
+                                <li class="nav-item">
+                                    <a href="{{ route('daftar-paket') }}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Daftar Paket</p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav nav-treeview" style="display: none;">
+                                <li class="nav-item">
+                                    <a href="{{ route('tambah-paket') }}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Tambah Paket</p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
 
                     </ul>
