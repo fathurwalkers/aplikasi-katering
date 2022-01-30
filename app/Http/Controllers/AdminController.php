@@ -16,4 +16,14 @@ class AdminController extends Controller
             return redirect()->route('login-admin')->with('status', 'Hanya administrator yang dapat login');
         }
     }
+
+    public function daftar_paket()
+    {
+        return view('admin.daftar-paket');
+    }
+
+    public function tambah_paket()
+    {
+        return view('admin.tambah-paket');
+    }
 }

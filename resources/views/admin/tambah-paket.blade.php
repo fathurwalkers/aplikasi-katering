@@ -1,9 +1,9 @@
 @extends('layouts.admin-layout')
 
-@section('title', 'Beranda - Administrator')
+@section('title', 'Tambah Paket - Administrator')
 
 @section('css')
-
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.css">
 @endsection
 
 @section('main-header', 'Headers')
@@ -21,5 +21,5 @@
 @endsection
 
 @section('js')
-
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.js"></script>
 @endsection

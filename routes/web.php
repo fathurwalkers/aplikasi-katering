@@ -26,5 +26,7 @@ Route::group(['prefix' => '/client', 'middleware' => 'ceklogin'], function () {
 // ADMIN
 Route::group(['prefix' => '/admin', 'middleware' => 'ceklogin'], function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin');
+    Route::get('/daftar-paket', [AdminController::class, 'daftar_paket'])->name('daftar-paket');
+    Route::get('/tambah-paket', [AdminController::class, 'tambah_paket'])->name('tambah-paket');
 });
 

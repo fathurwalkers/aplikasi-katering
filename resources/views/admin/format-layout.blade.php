@@ -1,11 +1,5 @@
 @extends('layouts.admin-layout')
 
-@section('title', 'Beranda - Administrator')
-
-@section('css')
-
-@endsection
-
 @section('main-header', 'Headers')
 
 @section('main-content')
@@ -17,9 +11,5 @@
             </div>
         </div>
     </div>
-
-@endsection
-
-@section('js')
 
 @endsection
