@@ -4,10 +4,14 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BackController;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\GenerateController;
 
 Route::get('/', function () {
     return redirect()->route('login-admin');
 });
+
+// Generate Data
+Route::get('/generate-user', [GenerateController::class, 'generate_user'])->name('generate-user');
 
 // CLIENT
 Route::get('/login', [BackController::class, 'login'])->name('login');
@@ -26,7 +30,13 @@ Route::group(['prefix' => '/client', 'middleware' => 'ceklogin'], function () {
 // ADMIN
 Route::group(['prefix' => '/admin', 'middleware' => 'ceklogin'], function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin');
+
+    // Paket
     Route::get('/daftar-paket', [AdminController::class, 'daftar_paket'])->name('daftar-paket');
     Route::get('/tambah-paket', [AdminController::class, 'tambah_paket'])->name('tambah-paket');
+
+    // Pengguna (User)
+    Route::get('/daftar-user', [AdminController::class, 'daftar_user'])->name('daftar-user');
+    Route::post('/user/hapus/{id}', [AdminController::class, 'hapus_user'])->name('hapus-user');
 });
 

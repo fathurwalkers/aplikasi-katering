@@ -106,6 +106,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </li>
 
                         <li class="nav-item">
+                            <a href="{{ route('daftar-user') }}" class="nav-link">
+                                <i class="nav-icon fas fa-th"></i>
+                                <p>
+                                    Pengguna
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-chart-pie"></i>
                                 <p>
@@ -143,7 +152,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <!-- Content Header (Page header) -->
             <div class="content-header">
                 <div class="container-fluid">
-                    <div class="row mb-2">
+                    <div class="row mb-0">
                         <div class="col-sm-6">
                             <h1 class="m-0">@yield('main-header')</h1>
                         </div>
