@@ -27,32 +27,43 @@
                 <table id="example" class="table table-bordered" style="width:100%">
                     <thead>
                         <tr>
-                            <th>Nama</th>
-                            <th>Username</th>
-                            <th>Password</th>
-                            <th>Level</th>
+                            <th>Nama Paket</th>
+                            <th>Harga</th>
+                            <th>Status</th>
+                            <th>Kode Paket</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
 
+                        @foreach ($paket as $item)
+
                         <tr>
-                            <td>c</td>
-                            <td>c</td>
-                            <td>c</td>
-                            <td>c</td>
+                            <td>{{ $item->paket_nama }}</td>
+                            <td>Rp. {{ number_format($item->paket_harga,2,',','.') }}</td>
+                            <td class="d-flex justify-content-center">
+                                @switch($item->paket_status)
+                                    @case("TERSEDIA")
+                                        <button type="button" class="btn btn-sm btn-success">TERSEDIA</button>
+                                        @break
+                                    @case("KOSONG")
+                                        <button type="button" class="btn btn-sm btn-danger">KOSONG</button>
+                                        @break
+                                @endswitch
+                            </td>
+                            <td>{{ $item->paket_kode }}</td>
                             <td width="15%">
                                 <div class="btn-group d-flex justify-content-center">
                                 <a href="#" class="btn btn-info btn-sm mr-1">LIHAT</a>
                                     <a href="#" class="btn btn-primary btn-sm mr-1">UBAH</a>
-                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modalhapus">
+                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modalhapus{{ $item->id }}">
                                         HAPUS
                                     </button>
                                 </div>
                             </td>
                         </tr>
 
-                        <div class="modal fade" id="modalhapus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="modalhapus{{ $item->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -63,18 +74,21 @@
                                     </div>
                                     <div class="modal-body">
                                         <p>Apakah anda yakin ingin menghapus Pengguna ini ? <br>
-                                            Nama Pengguna : ITEM
+                                            Nama Pengguna : {{ $item->paket_nama }}
                                         </p>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-info" data-dismiss="modal">Tidak</button>
-                                        <form action="#" method="GET">
+                                        <form action="{{ route('hapus-paket', $item->id) }}" method="POST">
+                                            @csrf
                                             <button type="submit" class="btn btn-danger">Hapus</button>
                                         </form>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+                        @endforeach
 
                     </tbody>
                 </table>

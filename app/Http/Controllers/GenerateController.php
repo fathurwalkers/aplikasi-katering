@@ -48,4 +48,30 @@ class GenerateController extends Controller
         }
         return redirect()->route('daftar-user')->with('status', 'Data User telah berhasil digenerate!');
     }
+
+    public function generate_paket()
+    {
+        $faker = Faker::create('id_ID');
+        for ($i=0; $i < 25; $i++) {
+            $arr_status = ["TERSEDIA", "KOSONG"];
+            $randomStatus = Arr::random($arr_status);
+            $paket_kode = 'PAKET-' . strtoupper(Str::random(5));
+            $arr_number = [3, 4, 5, 6, 7, 8];
+            $randomDigit = Arr::random($arr_number);
+
+            $paket = new Paket;
+            $savepaket = $paket->create([
+                'paket_nama' => $faker->words($randomDigit, true),
+                'paket_gambar' => "paket1.jpg",
+                'paket_harga' => $faker->randomNumber($randomDigit),
+                'paket_info' => $faker->paragraph($randomDigit),
+                'paket_kode' => $paket_kode,
+                'paket_status' => $randomStatus,
+                'created_at' => now(),
+                'updated_at' => now()
+            ]);
+            $savepaket->save();
+        }
+        return redirect()->route('daftar-paket')->with('status', 'Data Paket telah berhasil di generate.');
+    }
 }

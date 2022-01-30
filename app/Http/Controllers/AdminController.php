@@ -36,18 +36,29 @@ class AdminController extends Controller
     public function hapus_user($id)
     {
         $user_id = $id;
-        $findBidan = Login::findOrFail($user_id);
-        $findBidan->forceDelete();
-        return redirect()->route('daftar-user')->with('status', 'Data User telah di hapus.');
+        $findUser = Login::findOrFail($user_id);
+        $findUser->forceDelete();
+        return redirect()->route('daftar-user')->with('status', 'Data User telah berhasil di hapus.');
     }
 
     public function daftar_paket()
     {
-        return view('admin.daftar-paket');
+        $paket = Paket::all();
+        return view('admin.daftar-paket', [
+            'paket' => $paket
+        ]);
     }
 
     public function tambah_paket()
     {
         return view('admin.tambah-paket');
+    }
+
+    public function hapus_paket($id)
+    {
+        $paket_id = $id;
+        $findPaket = Paket::findOrFail($paket_id);
+        $findPaket->forceDelete();
+        return redirect()->route('daftar-paket')->with('status', 'Data Paket telah berhasil di hapus.');
     }
 }
