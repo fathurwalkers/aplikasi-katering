@@ -12,6 +12,7 @@ class CreatePaketsTable extends Migration
             $table->id();
 
             $table->string('paket_nama')->nullable();
+            $table->string('paket_gambar')->nullable();
             $table->integer('paket_harga')->nullable();
             $table->longText('paket_info')->nullable();
             $table->string('paket_kode')->nullable();

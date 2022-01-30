@@ -18,6 +18,12 @@
 
             <div class="card-body">
 
+                @if (session('status'))
+                    <div class="alert alert-primary">
+                        {{ session('status') }}
+                    </div>
+                @endif
+
                 <table id="example" class="table table-bordered" style="width:100%">
                     <thead>
                         <tr>
