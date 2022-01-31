@@ -43,6 +43,13 @@ class AdminController extends Controller
 
     public function daftar_paket()
     {
+        $users = session('data_login');
+        $user_level = $users->login_level;
+
+        if($user_level == 'user') {
+            return redirect()->route('dashboard');
+        }
+
         $paket = Paket::all();
         return view('admin.daftar-paket', [
             'paket' => $paket
