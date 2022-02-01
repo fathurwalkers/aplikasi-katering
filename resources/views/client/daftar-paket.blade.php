@@ -22,7 +22,7 @@
 <div class="row">
     <div class="col-sm-12 mt-1 mb-1">
         <div class="card">
-            <img class="card-img-top img-thumbnail img-fluid" src="{{ asset('tampilan/img/paket1.jpg') }}" alt="Card image cap">
+            <img class="card-img-top img-thumbnail img-fluid" src="{{ asset('tampilan/img') }}/{{ $item->paket_gambar }}" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">{{ Str::limit($item->paket_nama, 25) }}</h5>
                 <p class="card-text"><b>HARGA : Rp. {{ number_format($item->paket_harga,2,',','.') }} </b><br>

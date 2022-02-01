@@ -58,11 +58,18 @@ class GenerateController extends Controller
             $paket_kode = 'PAKET-' . strtoupper(Str::random(5));
             $arr_number = [3, 4, 5, 6, 7, 8];
             $randomDigit = Arr::random($arr_number);
-
+            $arr_gambar = [
+                "paket1.jpg",
+                "paket2.jpg",
+                "paket3.jpg",
+                "paket4.jpg",
+                "paket5.jpg"
+            ];
+            $randomGambar = Arr::random($arr_gambar);
             $paket = new Paket;
             $savepaket = $paket->create([
                 'paket_nama' => $faker->words($randomDigit, true),
-                'paket_gambar' => "paket1.jpg",
+                'paket_gambar' => $randomGambar,
                 'paket_harga' => $faker->randomNumber($randomDigit),
                 'paket_info' => $faker->paragraph($randomDigit),
                 'paket_kode' => $paket_kode,
