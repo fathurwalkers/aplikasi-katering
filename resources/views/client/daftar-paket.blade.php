@@ -18,32 +18,35 @@
     </div>
 </div>
 
+@foreach ($paket as $item)
 <div class="row">
-    <div class="col-sm-6 mt-2">
+    <div class="col-sm-12 mt-1 mb-1">
         <div class="card">
             <img class="card-img-top img-thumbnail img-fluid" src="{{ asset('tampilan/img/paket1.jpg') }}" alt="Card image cap">
             <div class="card-body">
-                <h5 class="card-title">Special title treatment</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <h5 class="card-title">{{ Str::limit($item->paket_nama, 25) }}</h5>
+                <p class="card-text"><b>Rp. {{ number_format($item->paket_harga,2,',','.') }} </b></p>
+                <p class="card-text">
+                    <b>STATUS :
+                        @switch($item->paket_status)
+                            @case("TERSEDIA")
+                                <span style="color:rgb(43, 197, 76)">TERSEDIA</span>
+                                @break
+                            @case("KOSONG")
+                                <span style="color:rgb(201, 15, 15)">KOSONG</span>
+                                @break
+                        @endswitch
+                    </b>
+                </p>
                 <div class="d-flex justify-content-end">
-                    <a href="{{ route('client-detail-paket', '1') }}" class="btn btn-primary px-3">Selengkapnya</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-6 mt-2">
-        <div class="card">
-            <img class="card-img-top img-thumbnail img-fluid" src="{{ asset('tampilan/img/paket1.jpg') }}" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Special title treatment</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <div class="d-flex justify-content-end">
-                    <a href="{{ route('client-detail-paket', '2') }}" class="btn btn-primary px-3">Selengkapnya</a>
+                    <a href="{{ route('client-detail-paket', '1') }}" class="btn btn-md btn-primary shadow">Selengkapnya</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
+@endforeach
+
 
 @endsection
 
