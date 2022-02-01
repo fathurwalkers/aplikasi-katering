@@ -25,8 +25,7 @@
             <img class="card-img-top img-thumbnail img-fluid" src="{{ asset('tampilan/img/paket1.jpg') }}" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">{{ Str::limit($item->paket_nama, 25) }}</h5>
-                <p class="card-text"><b>Rp. {{ number_format($item->paket_harga,2,',','.') }} </b></p>
-                <p class="card-text">
+                <p class="card-text"><b>HARGA : Rp. {{ number_format($item->paket_harga,2,',','.') }} </b><br>
                     <b>STATUS :
                         @switch($item->paket_status)
                             @case("TERSEDIA")
