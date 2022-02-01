@@ -63,7 +63,12 @@ class GenerateController extends Controller
                 "paket2.jpg",
                 "paket3.jpg",
                 "paket4.jpg",
-                "paket5.jpg"
+                "paket5.jpg",
+                "paket6.jpg",
+                "paket7.jpg",
+                "paket8.jpg",
+                "paket9.jpg",
+                "paket10.jpg"
             ];
             $randomGambar = Arr::random($arr_gambar);
             $paket = new Paket;

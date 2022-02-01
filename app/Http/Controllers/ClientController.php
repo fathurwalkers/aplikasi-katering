@@ -26,7 +26,7 @@ class ClientController extends Controller
 
     public function daftar_paket()
     {
-        $paket = Paket::all();
+        $paket = Paket::paginate(5);
         return view('client.daftar-paket', [
             'paket' => $paket
         ]);
