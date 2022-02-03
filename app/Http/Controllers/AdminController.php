@@ -65,7 +65,11 @@ class AdminController extends Controller
     {
         $paket_id = $id;
         $findPaket = Paket::findOrFail($paket_id);
+        $nama_paket = $findPaket->paket_nama;
         $findPaket->forceDelete();
-        return redirect()->route('daftar-paket')->with('status', 'Data Paket telah berhasil di hapus.');
+        $alert = "Data Paket ";
+        $alert .= $nama_paket;
+        $alert .= " telah berhasil dihapus!";
+        return redirect()->route('daftar-paket')->with('status', $alert);
     }
 }

@@ -13,7 +13,7 @@ class CreateInformasisTable extends Migration
      */
     public function up()
     {
-        Schema::create('informasis', function (Blueprint $table) {
+        Schema::create('informasi', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ class CreateInformasisTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('informasis');
+        Schema::dropIfExists('informasi');
     }
 }
