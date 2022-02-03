@@ -46,7 +46,11 @@
 </div>
 @endforeach
 
-{{ $paket->links() }}
+<div class="row mt-2">
+    <div class="col-12 d-flex justify-content-center">
+        {{ $paket->links() }}
+    </div>
+</div>
 
 
 @endsection
