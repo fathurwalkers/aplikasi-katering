@@ -46,7 +46,7 @@
                     </b>
                 </p>
                 <div class="d-flex justify-content-end">
-                    <a href="{{ route('client-detail-paket', '1') }}" class="btn btn-md btn-primary shadow">Selengkapnya</a>
+                    <a href="{{ route('client-detail-paket', $item->id) }}" class="btn btn-md btn-primary shadow">Selengkapnya</a>
                 </div>
             </div>
         </div>
