@@ -16,6 +16,14 @@
     <div class="col-12 mt-2 d-flex justify-content-center bg-success">
         <h5 class="text-white">DAFTAR PAKET</h5>
     </div>
+    @if (session('status'))
+    <div class="col-12 mt-2 d-flex justify-content-center">
+        <div class="alert alert-primary">
+            {{ session('status') }}
+        </div>
+    </div>
+    <br>
+@endif
 </div>
 
 @foreach ($paket as $item)

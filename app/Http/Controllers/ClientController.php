@@ -34,7 +34,13 @@ class ClientController extends Controller
 
     public function detail_paket(Request $request, $id)
     {
-        return view('client.detail-paket');
+        $paket = Paket::where('id', $id)->first();
+        if ($paket == NULL) {
+            return redirect()->route('client-daftar-paket')->with('status', 'Maaf, paket yang anda pilih tidak tersedia.');
+        }
+        return view('client.detail-paket', [
+            'paket' => $paket
+        ]);
     }
 
     public function pemesanan($id)
