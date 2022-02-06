@@ -56,7 +56,7 @@
                             <td width="15%">
                                 <div class="btn-group d-flex justify-content-center">
                                 <a href="#" class="btn btn-info btn-sm mr-1">LIHAT</a>
-                                    <a href="#" class="btn btn-primary btn-sm mr-1">UBAH</a>
+                                    {{-- <a href="#" class="btn btn-primary btn-sm mr-1">UBAH</a> --}}
                                     <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modalhapus{{ $item->id }}">
                                         HAPUS
                                     </button>
@@ -68,14 +68,14 @@
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">Hapus Pemesanan</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <p>Apakah anda yakin ingin menghapus Pengguna ini ? <br>
-                                            Nama Pengguna : {{ $item->paket_nama }}
+                                        <p>Apakah anda yakin ingin menghapus Laporan Pemesanan ini ? <br>
+                                            Laporan Pemesanan : {{ $item->paket_nama }}
                                         </p>
                                     </div>
                                     <div class="modal-footer">

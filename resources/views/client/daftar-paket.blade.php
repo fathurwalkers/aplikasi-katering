@@ -28,7 +28,7 @@
 
 @foreach ($paket as $item)
 <div class="row">
-    <div class="col-sm-12 mt-1 mb-1">
+    <div class="col-12 mt-1 mb-1">
         <div class="card">
             <img class="card-img-top img-thumbnail img-fluid" src="{{ asset('tampilan/img') }}/{{ $item->paket_gambar }}" alt="Card image cap">
             <div class="card-body">
@@ -54,11 +54,13 @@
 </div>
 @endforeach
 
-<div class="row mt-2">
-    <div class="col-12 d-flex justify-content-center">
-        {{ $paket->links() }}
+{{-- <div class="container"> --}}
+    <div class="row mt-2 d-flex justify-content-center">
+        <div class="col-12">
+            {{ $paket->links() }}
+        </div>
     </div>
-</div>
+{{-- </div> --}}
 
 
 @endsection

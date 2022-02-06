@@ -21,4 +21,16 @@ class PemesananController extends Controller
             'pemesanan' => $pemesanan
         ]);
     }
+
+    public function hapus_pemesanan($id)
+    {
+        $pemesanan_id = $id;
+        $findpemesanan = Pemesanan::findOrFail($pemesanan_id);
+        $nama_pemesanan = $findpemesanan->pemesanan_nama;
+        $findpemesanan->forceDelete();
+        $alert = "Data Pemesanan ";
+        $alert .= $nama_pemesanan;
+        $alert .= " telah berhasil dihapus!";
+        return redirect()->route('daftar-pemesanan')->with('status', $alert);
+    }
 }
