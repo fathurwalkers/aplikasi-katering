@@ -40,36 +40,4 @@ class AdminController extends Controller
         $findUser->forceDelete();
         return redirect()->route('daftar-user')->with('status', 'Data User telah berhasil di hapus.');
     }
-
-    public function daftar_paket()
-    {
-        $users = session('data_login');
-        $user_level = $users->login_level;
-
-        if($user_level == 'user') {
-            return redirect()->route('dashboard');
-        }
-
-        $paket = Paket::all();
-        return view('admin.daftar-paket', [
-            'paket' => $paket
-        ]);
-    }
-
-    public function tambah_paket()
-    {
-        return view('admin.tambah-paket');
-    }
-
-    public function hapus_paket($id)
-    {
-        $paket_id = $id;
-        $findPaket = Paket::findOrFail($paket_id);
-        $nama_paket = $findPaket->paket_nama;
-        $findPaket->forceDelete();
-        $alert = "Data Paket ";
-        $alert .= $nama_paket;
-        $alert .= " telah berhasil dihapus!";
-        return redirect()->route('daftar-paket')->with('status', $alert);
-    }
 }

@@ -7,8 +7,8 @@ use App\Http\Controllers\ClientController;
 use App\Http\Controllers\GenerateController;
 
 Route::get('/', function () {
-    return redirect()->route('login-admin');
-});
+    return view('landing-page');
+})->name('landing-page');
 
 // Generate Data
 Route::get('/generate-user', [GenerateController::class, 'generate_user'])->name('generate-user');
@@ -30,13 +30,16 @@ Route::group(['prefix' => '/client', 'middleware' => 'ceklogin'], function () {
 });
 
 // ADMIN
-Route::group(['prefix' => '/admin', 'middleware' => 'ceklogin'], function () {
+Route::group(['prefix' => '/admin', 'middleware' => 'cekloginadmin'], function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin');
 
     // Paket
-    Route::get('/daftar-paket', [AdminController::class, 'daftar_paket'])->name('daftar-paket');
-    Route::get('/tambah-paket', [AdminController::class, 'tambah_paket'])->name('tambah-paket');
-    Route::post('/paket/hapus/{id}', [AdminController::class, 'hapus_paket'])->name('hapus-paket');
+    Route::get('/daftar-paket', [PaketController::class, 'daftar_paket'])->name('daftar-paket');
+    Route::get('/tambah-paket', [PaketController::class, 'tambah_paket'])->name('tambah-paket');
+    Route::post('/paket/hapus/{id}', [PaketController::class, 'hapus_paket'])->name('hapus-paket');
+
+    // Pemesanan
+    Route::get('/daftar-pemesanan', [PemesananController::class, 'daftar_pemesanan'])->name('daftar-pemesanan');
 
     // Pengguna (User)
     Route::get('/daftar-user', [AdminController::class, 'daftar_user'])->name('daftar-user');
