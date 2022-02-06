@@ -86,4 +86,43 @@ class GenerateController extends Controller
         }
         return redirect()->route('daftar-paket')->with('status', 'Data Paket telah berhasil di generate.');
     }
+
+    public function generate_pemesanan()
+    {
+        $faker = Faker::create('id_ID');
+        for ($i=0; $i < 4; $i++) {
+
+            $pemesanan_kode = 'PESANAN-' . strtoupper(Str::random(5));
+            $arr_number             = [1, 2, 3, 4, 5];
+            $arr_status             = ['SELESAI', 'PROSES', 'PENDING'];
+            $randomStatus           = Arr::random($arr_status);
+            $randomDigit            = Arr::random($arr_number);
+
+            $users                  = Login::where('login_level', 'user')->get()->toArray();
+            $randomUsers            = Arr::random($users);
+            $idUsers                = intval($randomUsers['id']);
+
+            $paket                  = Paket::all()->toArray();
+            $randomPaket            = Arr::random($paket);
+            $idPaket                = intval($randomPaket['id']);
+
+            $pemesanan              = new Pemesanan;
+            $savePemesanan          = $pemesanan->create([
+                'pemesanan_kode'    => $pemesanan_kode,
+                'pemesanan_jumlah'  => intval($randomDigit),
+                'pemesanan_status'  => $randomStatus,
+                'created_at'        => now(),
+                'updated_at'        => now()
+            ]);
+
+            // dd($savePemesanan);
+
+            $savePemesanan->save();
+            $savePemesanan->login()->associate($idUsers);
+            $savePemesanan->save();
+            $savePemesanan->paket()->associate($idPaket);
+            $savePemesanan->save();
+        }
+        return redirect()->route('daftar-paket');
+    }
 }

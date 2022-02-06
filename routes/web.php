@@ -5,6 +5,8 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BackController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\GenerateController;
+use App\Http\Controllers\PemesananController;
+use App\Http\Controllers\PaketController;
 
 Route::get('/', function () {
     return view('landing-page');
@@ -13,6 +15,7 @@ Route::get('/', function () {
 // Generate Data
 Route::get('/generate-user', [GenerateController::class, 'generate_user'])->name('generate-user');
 Route::get('/generate-paket', [GenerateController::class, 'generate_paket'])->name('generate-paket');
+Route::get('/generate-pemesanan', [GenerateController::class, 'generate_pemesanan'])->name('generate-pemesanan');
 
 // CLIENT
 Route::get('/login', [BackController::class, 'login'])->name('login');
