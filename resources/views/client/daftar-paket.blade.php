@@ -54,13 +54,13 @@
 </div>
 @endforeach
 
-{{-- <div class="container"> --}}
+{{-- <div class="container">
     <div class="row mt-2 d-flex justify-content-center">
         <div class="col-12">
             {{ $paket->links() }}
         </div>
     </div>
-{{-- </div> --}}
+</div> --}}
 
 
 @endsection

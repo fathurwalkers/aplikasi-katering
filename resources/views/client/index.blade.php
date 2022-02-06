@@ -44,7 +44,7 @@
                             </button>
                         </div>
                     </div>
-                    <div class="row">
+                    {{-- <div class="row">
                         <div class="col-12 d-flex justify-content-center">
                             <button class="btn btn-lg btn-info btn-block mb-2" style="width:100%">
                                 <i class="fas fa-archive"></i>
@@ -59,7 +59,7 @@
                                 &nbsp;&nbsp;&nbsp; DAFTAR PENGGUNA
                             </button>
                         </div>
-                    </div>
+                    </div> --}}
                 {{-- </div> --}}
             {{-- </div> --}}
         {{-- </div> --}}
