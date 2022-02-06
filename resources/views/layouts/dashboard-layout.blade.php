@@ -74,8 +74,11 @@
 
         @yield('main-content')
 
-      </div>
+        @yield('pagination')
+
+    </div>
     </section>
+
 
     <!-- background -->
     <div class="backdrop" id="backdrop"></div>

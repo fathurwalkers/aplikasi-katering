@@ -7,6 +7,10 @@
         clip: rect(0, 1000px, 100px, 0);
         /* clip: shape(top, right, bottom, left); NB 'rect' is the only available option */
     }
+
+    #content {
+        overflow-x: auto !important;
+    }
 </style>
 @endsection
 
@@ -54,15 +58,18 @@
 </div>
 @endforeach
 
-<div class="container">
-    <div class="row mt-2 d-flex justify-content-center">
-        <div class="col-12">
-            {{ $paket->links() }}
+{{-- {{ $paket->onEachSide(1)->links() }} --}}
+
+@endsection
+
+@section('pagination')
+<div class="container mt-4 mb-2">
+    <div class="col-12">
+        <div class="d-flex justify-content-center">
+            {{ $paket->onEachSide(0)->links() }}
         </div>
     </div>
 </div>
-
-
 @endsection
 
 @section('js')
