@@ -20,6 +20,7 @@
         @endif
     </div>
 </div>
+
 <div class="row">
     <div class="col-sm-6 mt-1">
         <div class="card mb-2 bgheader">
@@ -30,38 +31,39 @@
     </div>
 </div>
 
-<div class="container">
-    <div class="row">
-        {{-- <div class="col-8"> --}}
-            <button type="button" class="btn btn-primary btn-lg btn-block">
-                <div class="row">
-                    <div class="col-1">
-                        <i class="fas fa-archive"></i>
+{{-- <div class="row"> --}}
+    {{-- <div class="col-12"> --}}
+        {{-- <div class="card mt-2 shadow-sm"> --}}
+            {{-- <div class="card-body mt-1"> --}}
+                {{-- <div class="container"> --}}
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-center">
+                            <button class="btn btn-lg btn-info btn-block mb-2" style="width:100%">
+                                <i class="fas fa-archive"></i>
+                                &nbsp;&nbsp;&nbsp; DAFTAR PENGGUNA
+                            </button>
+                        </div>
                     </div>
-                    <div class="col-2">
-                        Paket
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-center">
+                            <button class="btn btn-lg btn-info btn-block mb-2" style="width:100%">
+                                <i class="fas fa-archive"></i>
+                                &nbsp;&nbsp;&nbsp; DAFTAR PENGGUNA
+                            </button>
+                        </div>
                     </div>
-                    <div class="col-9">
-                        <i class="fas fa-lg-archive"></i>
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-center">
+                            <button class="btn btn-lg btn-info btn-block mb-2" style="width:100%">
+                                <i class="fas fa-archive"></i>
+                                &nbsp;&nbsp;&nbsp; DAFTAR PENGGUNA
+                            </button>
+                        </div>
                     </div>
-                </div>
-            </button>
+                {{-- </div> --}}
+            {{-- </div> --}}
         {{-- </div> --}}
-    </div>
-</div>
-
-{{-- <div class="row">
-    <div class="col-12">
-        <div class="card mt-2 shadow-sm">
-            <div class="card-body mt-1">
-                <h5 class="card-title d-flex justify-content-center">
-                    <i class="fas fa-archive"></i>
-                    &nbsp;&nbsp;&nbsp;
-                    <a href="#">DAFTAR PENGGUNA</a>
-                </h5>
-            </div>
-        </div>
-    </div>
-</div> --}}
+    {{-- </div> --}}
+{{-- </div> --}}
 
 @endsection

@@ -69,7 +69,7 @@
     <!-- end of sidebar nav -->
 
     <!-- konten menu -->
-    <section id="content" class="content py-5 d-flex justify-content-center mt-2" style="min-height: 100%">
+    <section id="content" class="content py-5 d-flex justify-content-center mt-2">
       <div class="container mb-4">
 
         @yield('main-content')

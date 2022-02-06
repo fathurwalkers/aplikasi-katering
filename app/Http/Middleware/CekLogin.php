@@ -19,7 +19,7 @@ class CekLogin
         //     session(['data_login' => $cookie]);
         //     return $next($request);
         } else {
-            return redirect()->route('login')->with('status_fail', 'Silahkan login terlebih dahulu!');
+            return redirect()->route('login-admin')->with('status_fail', 'Silahkan login terlebih dahulu!');
         }
     }
 }
