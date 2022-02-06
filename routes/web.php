@@ -17,6 +17,8 @@ Route::get('/generate-user', [GenerateController::class, 'generate_user'])->name
 Route::get('/generate-paket', [GenerateController::class, 'generate_paket'])->name('generate-paket');
 Route::get('/generate-pemesanan', [GenerateController::class, 'generate_pemesanan'])->name('generate-pemesanan');
 
+Route::get('/chained-generate', [GenerateController::class, 'chained_generate'])->name('chained-generate');
+
 // CLIENT
 Route::get('/login', [BackController::class, 'login'])->name('login');
 Route::get('/login-admin', [BackController::class, 'login_admin'])->name('login-admin');

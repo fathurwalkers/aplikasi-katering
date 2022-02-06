@@ -27,31 +27,32 @@
                 <table id="example" class="table table-bordered" style="width:100%">
                     <thead>
                         <tr>
-                            <th>Nama Paket</th>
-                            <th>Harga</th>
+                            <th>Kode Pemesanan</th>
+                            <th>Jumlah</th>
                             <th>Status</th>
-                            <th>Kode Paket</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
 
-                        @foreach ($paket as $item)
+                        @foreach ($pemesanan as $item)
 
                         <tr>
-                            <td>{{ $item->paket_nama }}</td>
-                            <td>Rp. {{ number_format($item->paket_harga,2,',','.') }}</td>
+                            <td>{{ $item->pemesanan_kode }}</td>
+                            <td>{{ $item->pemesanan_jumlah }}</td>
                             <td class="d-flex justify-content-center">
-                                @switch($item->paket_status)
-                                    @case("TERSEDIA")
-                                        <button type="button" class="btn btn-sm btn-success">TERSEDIA</button>
+                                @switch($item->pemesanan_status)
+                                    @case("SELESAI")
+                                        <button type="button" class="btn btn-sm btn-success">SELESAI</button>
                                         @break
-                                    @case("KOSONG")
-                                        <button type="button" class="btn btn-sm btn-danger">KOSONG</button>
+                                    @case("PROSES")
+                                        <button type="button" class="btn btn-sm btn-info">DIPROSES</button>
+                                        @break
+                                    @case("PENDING")
+                                        <button type="button" class="btn btn-sm btn-danger">PENDING</button>
                                         @break
                                 @endswitch
                             </td>
-                            <td>{{ $item->paket_kode }}</td>
                             <td width="15%">
                                 <div class="btn-group d-flex justify-content-center">
                                 <a href="#" class="btn btn-info btn-sm mr-1">LIHAT</a>

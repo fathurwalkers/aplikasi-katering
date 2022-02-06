@@ -16,6 +16,9 @@ class PemesananController extends Controller
 {
     public function daftar_pemesanan()
     {
-        return view('admin.daftar-pemesanan');
+        $pemesanan = Pemesanan::all();
+        return view('admin.daftar-pemesanan', [
+            'pemesanan' => $pemesanan
+        ]);
     }
 }
