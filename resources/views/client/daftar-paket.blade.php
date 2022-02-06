@@ -17,13 +17,13 @@
         <h5 class="text-white">DAFTAR PAKET</h5>
     </div>
     @if (session('status'))
-    <div class="col-12 mt-2 d-flex justify-content-center">
-        <div class="alert alert-primary">
-            {{ session('status') }}
+        <div class="col-12 mt-2 d-flex justify-content-center">
+            <div class="alert alert-primary">
+                {{ session('status') }}
+            </div>
         </div>
-    </div>
-    <br>
-@endif
+        <br>
+    @endif
 </div>
 
 @foreach ($paket as $item)
@@ -54,13 +54,13 @@
 </div>
 @endforeach
 
-{{-- <div class="container">
+<div class="container">
     <div class="row mt-2 d-flex justify-content-center">
         <div class="col-12">
             {{ $paket->links() }}
         </div>
     </div>
-</div> --}}
+</div>
 
 
 @endsection
