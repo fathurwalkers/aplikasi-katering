@@ -13,7 +13,7 @@
         <div class="card">
 
             <div class="card-header bg-primary">
-                <h4>Daftar Paket</h4>
+                <h4>Laporan Pemesanan</h4>
             </div>
 
             <div class="card-body">
@@ -28,6 +28,8 @@
                     <thead>
                         <tr>
                             <th>Kode Pemesanan</th>
+                            <th>Nama Pemesan</th>
+                            <th>Paket</th>
                             <th>Jumlah</th>
                             <th>Status</th>
                             <th>Aksi</th>
@@ -39,6 +41,8 @@
 
                         <tr>
                             <td>{{ $item->pemesanan_kode }}</td>
+                            <td>{{ $item->login->login_nama }}</td>
+                            <td>{{ $item->paket->paket_nama }}</td>
                             <td>{{ $item->pemesanan_jumlah }}</td>
                             <td class="d-flex justify-content-center">
                                 @switch($item->pemesanan_status)
