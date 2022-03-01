@@ -43,7 +43,7 @@
                             <td>{{ $item->pemesanan_kode }}</td>
                             <td>{{ $item->login->login_nama }}</td>
                             <td>{{ $item->paket->paket_nama }}</td>
-                            <td>{{ $item->pemesanan_jumlah }}</td>
+                            <td class="text-center">{{ $item->pemesanan_jumlah }}</td>
                             <td class="d-flex justify-content-center">
                                 @switch($item->pemesanan_status)
                                     @case("SELESAI")
