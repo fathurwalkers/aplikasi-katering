@@ -44,7 +44,7 @@
                             Alamat <br>
                         </div>
                         <div class="col-7">
-                            : {{ $paket->paket_nama }} <br>
+                            : {{ Str::limit($paket->paket_nama, 15) }} <br>
                             : {{ $paket->paket_harga }} <br>
                             : {{ $paket->paket_kode }} <br>
                             : {{ $paket->paket_harga }} <br>
@@ -53,11 +53,26 @@
                             : {{ $paket->paket_harga }} <br>
                         </div>
                     </div>
+
+                    <div class="row">
+                        <div class="col-12 border border-2 border-black mt-4">
+                            <br>
+                            <p class="text-wrap text-center">
+                                <i>Klik "SETUJU" jika anda ingin melanjutkan pemesanan. </i><br>
+                                Jika anda setuju untuk melanjutkan proses pemesanan, anda akan dialihkan ke Whatsapp untuk dapat langsung menkonfirmasi pemesanan.
+                            </p>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="d-flex justify-content-end mt-4 mb-2">
                     <a href="{{ route('client-detail-paket', $paket->id) }}" class="btn btn-danger px-3 shadow">BATALKAN</a> &nbsp;&nbsp;
-                    <a href="#" class="btn btn-primary px-3 shadow">PESAN</a>
+
+                    <form action="{{ route('save-pemesanan', $paket->id) }}" method="POST">
+                        @csrf
+                        <button type="submit" class="btn btn-primary px-3 shadow">PESAN</button>
+                    </form>
+
                 </div>
             </div>
         </div>

@@ -33,6 +33,7 @@ Route::post('/logout', [BackController::class, 'logout'])->name('logout');
 Route::get('/daftar-paket', [ClientController::class, 'daftar_paket'])->name('client-daftar-paket');
 Route::get('/detail-paket/{id}', [ClientController::class, 'detail_paket'])->name('client-detail-paket');
 Route::get('/pemesanan/{id}', [ClientController::class, 'pemesanan'])->name('pemesanan');
+Route::post('/pemesanan/proses/{id}', [ClientController::class, 'save_pemesanan'])->name('save-pemesanan');
 
 Route::get('/client', function () {
 
@@ -51,6 +52,7 @@ Route::get('/client', function () {
 
 Route::group(['prefix' => '/client/auth', 'middleware' => 'ceklogin'], function () {
     Route::get('/', [ClientController::class, 'index'])->name('dashboard');
+    Route::get('/towhatsapp', [ClientController::class, 'towhatsapp'])->name('towhatsapp');
 });
 
 // ADMIN
