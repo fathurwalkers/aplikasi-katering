@@ -10,9 +10,31 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="{{ asset('tampilan') }}/style/home.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
     <title>Halaman Utama</title>
 
     @yield('css')
+    <style>
+        .crd {
+            border-top-left-radius : 7%!important;
+            border-top-right-radius : 7%!important;
+            border-bottom-left-radius : 6%!important;
+            border-bottom-right-radius : 6%!important;
+        }
+
+        .crd2 {
+            border-top-left-radius : 5%!important;
+            border-top-right-radius : 5%!important;
+            border-bottom-left-radius : 7%!important;
+            border-bottom-right-radius : 7%!important;
+        }
+    </style>
+
 
   </head>
   <body id="body">
@@ -69,10 +91,84 @@
     <!-- end of sidebar nav -->
 
     <!-- konten menu -->
-    <section id="content" class="content py-5 d-flex justify-content-center mt-2">
+    <section id="content" class="content py-5 d-flex justify-content-center mt-3">
       <div class="container mb-4">
 
-        @yield('main-content')
+        <div class="row mt-2 mb-1">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="card crd2 text-white bg-info mb-3" style="">
+                    <div class="card-body">
+                      <h5 class="card-title">Selamat Datang</h5>
+                      <p class="card-text">Anda dapat langsung memilih paket yang anda inginkan, jika anda telah memilih paket silahkan login untuk melanjutkan pemesanan, atau lakukan registrasi terlebih dahulu untuk melakukan pemesanan paket. </p>
+                    </div>
+                  </div>
+            </div>
+        </div>
+
+        {{-- {{ asset('tampilan/img') }}/paket1.jpg --}}
+        <div class="row d-flex justify-content-center mt-2 mb-1">
+            <div class="col-sm-12 col-md-12 col-lg-12 d-flex justify-content-center">
+                <h4>Paket Pilihan</h4>
+            </div>
+        </div>
+        <div class="row mt-1 mb-2">
+           <div class="col-sm-12 col-lg-12 col-md-12">
+
+                <div class="card crd rounded-2 shadow">
+                    <div class="card-body">
+
+                        <div class="bd-example">
+                            <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+                              <ol class="carousel-indicators">
+                                <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                                <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                                <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+                              </ol>
+                              <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                  <img src="{{ asset('tampilan/img') . "/". $paket1["paket_gambar"] }}" class="d-block w-100" alt="{{ asset('tampilan/img') . "/". $paket1["paket_gambar"] }}">
+                                  <div class="carousel-caption d-none d-md-block">
+                                    <h5 class="text-dark">First slide label</h5>
+                                    <p>
+                                        <button class="btn btn-primary">CEK</button>
+                                    </p>
+                                  </div>
+                                </div>
+                                <div class="carousel-item">
+                                  <img src="{{ asset('tampilan/img') . "/". $paket2["paket_gambar"] }}" class="d-block w-100" alt="{{ asset('tampilan/img') . "/". $paket2["paket_gambar"] }}">
+                                  <div class="carousel-caption d-none d-md-block">
+                                    <h5 class="text-dark">Second slide label</h5>
+                                    <p>
+                                        <button class="btn btn-primary">CEK</button>
+                                    </p>
+                                  </div>
+                                </div>
+                                <div class="carousel-item">
+                                  <img src="{{ asset('tampilan/img') . "/". $paket3["paket_gambar"] }}" class="d-block w-100" alt="{{ asset('tampilan/img') . "/". $paket3["paket_gambar"] }}">
+                                  <div class="carousel-caption d-none d-md-block">
+                                    <h5 class="text-dark">Third slide label</h5>
+                                    <p>
+                                        <button class="btn btn-primary">CEK</button>
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                              <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                              </a>
+                              <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                              </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
 
       </div>
     </section>
@@ -124,6 +220,9 @@
     <script src="{{ asset('tampilan') }}/js/index.js"></script>
 
     @yield('js')
+    <script>
+
+    </script>
 
   </body>
 </html>

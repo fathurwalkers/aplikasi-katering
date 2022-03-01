@@ -7,6 +7,8 @@ use App\Http\Controllers\ClientController;
 use App\Http\Controllers\GenerateController;
 use App\Http\Controllers\PemesananController;
 use App\Http\Controllers\PaketController;
+use App\Models\Paket;
+use Illuminate\Support\Arr;
 
 Route::get('/', function () {
     // return view('landing-page');
@@ -33,7 +35,16 @@ Route::get('/detail-paket/{id}', [ClientController::class, 'detail_paket'])->nam
 Route::get('/pemesanan/{id}', [ClientController::class, 'pemesanan'])->name('pemesanan');
 
 Route::get('/client', function () {
-    return view('landing-page');
+
+    $var_paket = Paket::all()->toArray();
+    $paket1 = Arr::random($var_paket);
+    $paket2 = Arr::random($var_paket);
+    $paket3 = Arr::random($var_paket);
+    return view('landing-page', [
+        'paket1' => $paket1,
+        'paket2' => $paket2,
+        'paket3' => $paket3
+    ]);
     // return redirect()->route('admin');
 // })->name('landing-page');
 })->name('user-page');
