@@ -37,7 +37,6 @@
                         <div class="col-5">
                             Nama Paket <br>
                             Harga <br>
-                            Jumlah Paket <br>
                             Kode Paket <br>
                             Nama Pemesan <br>
                             No. HP <br>
@@ -45,20 +44,19 @@
                             Alamat <br>
                         </div>
                         <div class="col-7">
-                            : Nama Paket <br>
-                            : Harga <br>
-                            : Jumlah Pemesanan <br>
-                            : Kode Pemesanan <br>
-                            : Nama Pemesan <br>
-                            : No. Hp <br>
-                            : Email <br>
-                            : Alamat <br>
+                            : {{ $paket->paket_nama }} <br>
+                            : {{ $paket->paket_harga }} <br>
+                            : {{ $paket->paket_kode }} <br>
+                            : {{ $paket->paket_harga }} <br>
+                            : {{ $paket->paket_harga }} <br>
+                            : {{ $paket->paket_harga }} <br>
+                            : {{ $paket->paket_harga }} <br>
                         </div>
                     </div>
                 </div>
 
                 <div class="d-flex justify-content-end mt-4 mb-2">
-                    <a href="#" class="btn btn-danger px-3 shadow">BATALKAN</a> &nbsp;&nbsp;
+                    <a href="{{ route('client-detail-paket', $paket->id) }}" class="btn btn-danger px-3 shadow">BATALKAN</a> &nbsp;&nbsp;
                     <a href="#" class="btn btn-primary px-3 shadow">PESAN</a>
                 </div>
             </div>

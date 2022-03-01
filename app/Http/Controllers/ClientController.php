@@ -46,6 +46,20 @@ class ClientController extends Controller
 
     public function pemesanan($id)
     {
-        return view('client.pemesanan');
+        $users = session('data_login');
+
+        if ($users == null) {
+            return redirect()->route('daftar-paket')->with('status', 'Silahkan melakukan login dahulu sebelum memesan paket. ');
+        }
+
+        $paket_id = $id;
+        $paket = Paket::where('id', $paket_id)->firstOrFail();
+        if ($paket == null) {
+            return redirect()->route('daftar-paket')->with('status', 'Paket yang anda inginkan tidak tersedia. ');
+        } else {
+            return view('client.pemesanan', [
+                'paket' => $paket
+            ]);
+        }
     }
 }

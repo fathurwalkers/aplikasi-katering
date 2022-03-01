@@ -44,11 +44,11 @@
 
 @foreach ($paket as $item)
 <div class="row">
-    <div class="col-12 mt-1 mb-1">
-        <div class="card rounded-2">
-            <div class="w-100 h-25">
+    <div class="col-12 mt-1 mb-3">
+        <div class="card rounded-2 shadow-lg">
+            {{-- <div class="w-100 h-25">
                 <img class="card-img-top img-thumbnail img-fluid rounded" src="{{ asset('tampilan/img') }}/{{ $item->paket_gambar }}" alt="Card image cap">
-            </div>
+            </div> --}}
             <div class="card-body">
                 <h5 class="card-title">{{ Str::limit($item->paket_nama, 25) }}</h5>
                 <p class="card-text"><b>HARGA : Rp. {{ number_format($item->paket_harga,2,',','.') }} </b><br>
