@@ -1,6 +1,8 @@
 @extends('layouts/dashboard-layout')
 
 @section('css')
+<!-- Compiled and minified CSS -->
+{{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> --}}
 <style>
     .clippers {
         position: absolute;
@@ -28,17 +30,33 @@
 
 @section('main-content')
 
-<div class="row bg-success">
-    <div class="col-12 mt-2 d-flex justify-content-center bg-success">
-        <h5 class="text-white">DAFTAR PAKET</h5>
+<div class="row">
+    <div class="col-12 mt-2 d-flex justify-content-center bg-white mt-3 mb-2">
+        <h2 class="text-dark"><b>DAFTAR PAKET</b></h2>
     </div>
     @if (session('status'))
-        <div class="col-12 mt-2 d-flex justify-content-center">
+        {{-- <div class="col-12 mt-2 d-flex justify-content-center">
             <div class="alert alert-primary">
                 {{ session('status') }}
             </div>
-        </div>
+        </div> --}}
         <br>
+        <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-animation="true" data-delay="5000" data-autohide="true">
+            <div class="toast-header">
+                <span class="rounded mr-2 bg-primary" style="width: 15px;height: 15px"></span>
+
+                <strong class="mr-auto">Notifikasi</strong>
+                <small>1 menit yang lalu</small>
+                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="toast-body">
+                Halo, ini pesan notifikasi toast.
+                <br/>
+                www.malasngoding.com
+            </div>
+        </div>
     @endif
 </div>
 
@@ -87,5 +105,12 @@
 @endsection
 
 @section('js')
+<!--JavaScript at end of body for optimized loading-->
+{{-- <script type="text/javascript" src="js/materialize.min.js"></script> --}}
 
+<script>
+    <?php if(session('status')) { ?>
+	    $('.toast').toast('show');
+    <?php } ?>
+</script>
 @endsection

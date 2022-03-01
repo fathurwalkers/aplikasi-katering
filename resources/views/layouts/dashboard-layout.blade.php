@@ -21,7 +21,7 @@
       <div class="container-fluid p-0">
         <button class="navbar-toggler border-0 shadow-none col-12 d-flex" type="button">
           <span class="navbar-toggler-icon" id="tujuan"></span>
-          <p class="nabvar-brand me-auto my-auto fw-bold text-white ms-4 col-8">APLIKASI KATERING</p>
+          <p class="nabvar-brand me-auto my-auto fw-bold text-white ms-4 col-8">YEYEN CATERING</p>
         </button>
       </div>
     </nav>

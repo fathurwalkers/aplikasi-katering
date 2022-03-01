@@ -26,10 +26,11 @@ class ClientController extends Controller
 
     public function daftar_paket()
     {
-        // $paket = Paket::paginate(10);
-        $paket = Paket::paginate(10);
+        $users = session('data_login');
+        $paket = Paket::latest()->paginate(10);
         return view('client.daftar-paket', [
-            'paket' => $paket
+            'paket' => $paket,
+            'users' => $users
         ]);
     }
 
@@ -49,7 +50,7 @@ class ClientController extends Controller
         $users = session('data_login');
 
         if ($users == null) {
-            return redirect()->route('daftar-paket')->with('status', 'Silahkan melakukan login dahulu sebelum memesan paket. ');
+            return redirect()->route('client-daftar-paket')->with('status', 'Silahkan melakukan login dahulu sebelum memesan paket. ');
         }
 
         $paket_id = $id;
