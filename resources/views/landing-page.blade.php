@@ -45,7 +45,7 @@
           <ul class="nav flex-column">
             <li class="nav-item d-flex px-2 aktiv">
               <i class="fas fa-home my-auto"></i>
-              <a class="nav-link" href="{{ route('landing-page') }}">Beranda</a>
+              <a class="nav-link" href="{{ route('user-page') }}">Home</a>
             </li>
             <li class="nav-item d-flex px-2">
               <i class="fas fa-info-circle my-auto"></i>
@@ -84,7 +84,7 @@
     <footer id="footer1" class="footer1 col-12 fixed-bottom py-2">
         <ul class="nav justify-content-around text-white">
             <li class="nav-item">
-              <a class="nav-link active text-white py-0 d-flex flex-column" aria-current="page" href="{{ route('dashboard') }}"
+              <a class="nav-link active text-white py-0 d-flex flex-column" aria-current="page" href="{{ route('user-page') }}"
                 ><i class="fas fa-home my-auto mx-auto"></i>
                 <p class="mb-0">Beranda</p>
               </a>

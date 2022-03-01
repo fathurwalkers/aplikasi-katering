@@ -9,7 +9,9 @@ use App\Http\Controllers\PemesananController;
 use App\Http\Controllers\PaketController;
 
 Route::get('/', function () {
-    return view('landing-page');
+    // return view('landing-page');
+    return redirect()->route('admin');
+// })->name('landing-page');
 })->name('landing-page');
 
 // Generate Data
@@ -30,7 +32,13 @@ Route::get('/daftar-paket', [ClientController::class, 'daftar_paket'])->name('cl
 Route::get('/detail-paket/{id}', [ClientController::class, 'detail_paket'])->name('client-detail-paket');
 Route::get('/pemesanan/{id}', [ClientController::class, 'pemesanan'])->name('pemesanan');
 
-Route::group(['prefix' => '/client', 'middleware' => 'ceklogin'], function () {
+Route::get('/client', function () {
+    return view('landing-page');
+    // return redirect()->route('admin');
+// })->name('landing-page');
+})->name('user-page');
+
+Route::group(['prefix' => '/client/auth', 'middleware' => 'ceklogin'], function () {
     Route::get('/', [ClientController::class, 'index'])->name('dashboard');
 });
 

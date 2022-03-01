@@ -1,7 +1,7 @@
 <div>
     <ul class="nav justify-content-around text-white">
         <li class="nav-item">
-          <a class="nav-link active text-white py-0 d-flex flex-column" aria-current="page" href="{{ route('dashboard') }}"
+          <a class="nav-link active text-white py-0 d-flex flex-column" aria-current="page" href="{{ route('user-page') }}"
             ><i class="fas fa-home my-auto mx-auto"></i>
             <p class="mb-0">Beranda</p>
           </a>

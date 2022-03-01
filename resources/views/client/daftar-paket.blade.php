@@ -35,13 +35,13 @@
         <h2 class="text-dark"><b>DAFTAR PAKET</b></h2>
     </div>
     @if (session('status'))
-        {{-- <div class="col-12 mt-2 d-flex justify-content-center">
+        <div class="col-12 mt-2 d-flex justify-content-center">
             <div class="alert alert-primary">
                 {{ session('status') }}
             </div>
-        </div> --}}
+        </div>
         <br>
-        <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-animation="true" data-delay="5000" data-autohide="true">
+        {{-- <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-animation="true" data-delay="5000" data-autohide="true">
             <div class="toast-header">
                 <span class="rounded mr-2 bg-primary" style="width: 15px;height: 15px"></span>
 
@@ -56,7 +56,7 @@
                 <br/>
                 www.malasngoding.com
             </div>
-        </div>
+        </div> --}}
     @endif
 </div>
 

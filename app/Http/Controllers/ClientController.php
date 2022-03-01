@@ -50,7 +50,7 @@ class ClientController extends Controller
         $users = session('data_login');
 
         if ($users == null) {
-            return redirect()->route('client-daftar-paket')->with('status', 'Silahkan melakukan login dahulu sebelum memesan paket. ');
+            return redirect()->route('login')->with('status', 'Silahkan melakukan login dahulu sebelum memesan paket. ');
         }
 
         $paket_id = $id;

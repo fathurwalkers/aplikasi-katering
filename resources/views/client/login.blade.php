@@ -67,7 +67,7 @@
                         <button class="btn tombol text-white col-12 mt-1 rounded-pill" type="button" onclick="window.location.href='{{ route('register') }}'">Daftar disini</button>
                       </div>
                       <div class="col-12 text-center daftar mt-2">
-                        <button class="btn tombol text-white col-12 mt-1 rounded-pill" type="button" onclick="window.location.href='{{ route('dashboard') }}'">Halaman Utama</button>
+                        <button class="btn tombol text-white col-12 mt-1 rounded-pill" type="button" onclick="window.location.href='{{ route('user-page') }}'">Halaman Utama</button>
                       </div>
                     </div>
                   </div>
