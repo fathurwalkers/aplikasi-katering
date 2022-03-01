@@ -97,7 +97,7 @@ class ClientController extends Controller
         $save_pemesanan = $pemesanan->create([
             'pemesanan_kode' => $pemesanan_kode,
             'pemesanan_jumlah' => 1,
-            'pemesanan_jumlah' => "PENDING",
+            'pemesanan_status' => "PENDING",
             'created_at' => now(),
             'updated_at' => now()
         ]);
