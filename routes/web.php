@@ -63,6 +63,7 @@ Route::group(['prefix' => '/admin', 'middleware' => 'cekloginadmin'], function (
     Route::get('/daftar-paket', [PaketController::class, 'daftar_paket'])->name('daftar-paket');
     Route::get('/tambah-paket', [PaketController::class, 'tambah_paket'])->name('tambah-paket');
     Route::post('/paket/hapus/{id}', [PaketController::class, 'hapus_paket'])->name('hapus-paket');
+    Route::post('/paket/update/{id}', [PaketController::class, 'update_paket'])->name('update-paket');
 
     // Pemesanan
     Route::get('/daftar-pemesanan', [PemesananController::class, 'daftar_pemesanan'])->name('daftar-pemesanan');
