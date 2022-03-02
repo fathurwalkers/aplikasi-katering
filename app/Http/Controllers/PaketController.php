@@ -71,7 +71,6 @@ class PaketController extends Controller
                 'paket_status' => $request->paket_status,
                 'updated_at' => now()
             ]);
-            dd($paket);
             return redirect()->route('daftar-paket')->with('status', 'Data Paket telah di ubah. ');
         }
     }
