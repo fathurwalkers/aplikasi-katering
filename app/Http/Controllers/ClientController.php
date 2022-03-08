@@ -67,7 +67,7 @@ class ClientController extends Controller
     public function towhatsapp($id)
     {
         $pemesanan_id = $id;
-        $pemesanan = Pemesanan::where('id', $pemesanan_id)->firstOrFail();
+        $pemesanan = Pemesanan::where('id', $pemesanan_id)->orderBy('created_at', 'ASC')->firstOrFail();
         $login = Login::where('id', $pemesanan->login_id)->firstOrFail();
         $paket = Paket::where('id', $pemesanan->paket_id)->firstOrFail();
 
@@ -90,8 +90,8 @@ class ClientController extends Controller
         $paket              = Paket::where('id', $paket_id)->firstOrFail();
         $pemesanan          = new Pemesanan;
 
-        $kode1              = Str::random(5);
-        $kode2              = "ORDER-";
+        $kode1              = "PESANAN-";
+        $kode2              = Str::random(5);
         $pemesanan_kode     = $kode1 . $kode2;
 
         $save_pemesanan = $pemesanan->create([

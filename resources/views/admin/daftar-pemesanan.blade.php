@@ -30,6 +30,7 @@
                             <th>Kode Pemesanan</th>
                             <th>Nama Pemesan</th>
                             <th>Paket</th>
+                            <th>Waktu Pesan</th>
                             <th>Jumlah</th>
                             <th>Status</th>
                             <th>Aksi</th>
@@ -43,8 +44,9 @@
                             <td>{{ $item->pemesanan_kode }}</td>
                             <td>{{ $item->login->login_nama }}</td>
                             <td>{{ $item->paket->paket_nama }}</td>
+                            <td>{{ date("d-M-Y", strtotime($item->updated_at)) }}</td>
                             <td class="text-center">{{ $item->pemesanan_jumlah }}</td>
-                            <td class="d-flex justify-content-center">
+                            <td class="">
                                 @switch($item->pemesanan_status)
                                     @case("SELESAI")
                                         <button type="button" class="btn btn-sm btn-success">SELESAI</button>
@@ -57,7 +59,7 @@
                                         @break
                                 @endswitch
                             </td>
-                            <td width="15%">
+                            <td>
                                 <div class="btn-group d-flex justify-content-center">
                                 <a href="#" class="btn btn-info btn-sm mr-1">LIHAT</a>
                                     {{-- <a href="#" class="btn btn-primary btn-sm mr-1">UBAH</a> --}}

@@ -40,15 +40,15 @@ class DatabaseSeeder extends Seeder
 
         $token = Str::random(16);
         $role = "admin";
-        $hashPassword = Hash::make('yani', [
+        $hashPassword = Hash::make('ewit', [
             'rounds' => 12,
         ]);
         $hashToken = Hash::make($token, [
             'rounds' => 12,
         ]);
         Login::create([
-            'login_nama' => 'yani',
-            'login_username' => 'yani',
+            'login_nama' => 'ewit',
+            'login_username' => 'ewit',
             'login_password' => $hashPassword,
             'login_email' => 'yuyun@gmail.com',
             'login_telepon' => '085342072185',
