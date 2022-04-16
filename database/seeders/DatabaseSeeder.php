@@ -50,7 +50,7 @@ class DatabaseSeeder extends Seeder
             'login_nama' => 'ewit',
             'login_username' => 'ewit',
             'login_password' => $hashPassword,
-            'login_email' => 'yuyun@gmail.com',
+            'login_email' => 'ewit@gmail.com',
             'login_telepon' => '085342072185',
             'login_token' => $hashToken,
             'login_level' => $role,
