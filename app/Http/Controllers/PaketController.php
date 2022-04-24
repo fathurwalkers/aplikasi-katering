@@ -11,6 +11,7 @@ use Illuminate\Support\Arr;
 use App\Models\Login;
 use App\Models\Paket;
 use App\Models\Pemesanan;
+use Symfony\Component\HttpKernel\Event\RequestEvent;
 
 class PaketController extends Controller
 {
@@ -32,6 +33,28 @@ class PaketController extends Controller
     public function tambah_paket()
     {
         return view('admin.tambah-paket');
+    }
+
+    public function post_tambah_paket(Request $request)
+    {
+        $paket = new Paket;
+        $gambar_cek = $request->file('paket_gambar');
+        if (!$gambar_cek) {
+            $gambar = null;
+        } else {
+            $randomNamaGambar = Str::random(6) . '.jpg';
+            $gambar = $request->file('paket_gambar')->move(public_path('tampilan/img'), strtolower($randomNamaGambar));
+        }
+        $save_paket = $paket->create([
+            'paket_nama' => $request->paket_nama,
+            'paket_gambar' => $gambar,
+            'paket_harga' => $request->paket_harga,
+            'paket_info' => $request->paket_info,
+            'paket_kode' => $paket->paket_kode,
+            'paket_status' => $request->paket_status,
+            'created_at' => now()
+            'updated_at' => now()
+        ]);
     }
 
     public function hapus_paket($id)
