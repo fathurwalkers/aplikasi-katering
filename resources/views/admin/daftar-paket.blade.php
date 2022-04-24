@@ -90,7 +90,7 @@
                                         </button>
                                     </div>
 
-                                    <form action="#" method="POST" enctype="multipart/form-data">
+                                    <form action="{{ route('post-tambah-paket') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="modal-body">
 
@@ -140,7 +140,7 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-info" data-dismiss="modal">Batalkan</button>
-                                        <button type="submit" class="btn btn-danger">Ubah Data</button>
+                                        <button type="submit" class="btn btn-danger">Simpan</button>
                                     </div>
                                     </form>
 

@@ -61,9 +61,8 @@ class PaketController extends Controller
             'created_at' => now(),
             'updated_at' => now()
         ]);
-        dump($save_paket);
-        die;
         $save_paket->save();
+        return redirect()->route('daftar-paket')->with('status', 'Berhasil menambah paket baru.');
     }
 
     public function hapus_paket($id)
