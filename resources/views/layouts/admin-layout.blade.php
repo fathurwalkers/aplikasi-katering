@@ -130,14 +130,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     </a>
                                 </li>
                             </ul>
-                            <ul class="nav nav-treeview" style="display: none;">
+                            {{-- <ul class="nav nav-treeview" style="display: none;">
                                 <li class="nav-item">
                                     <a href="{{ route('tambah-paket') }}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Tambah Paket</p>
                                     </a>
                                 </li>
-                            </ul>
+                            </ul> --}}
                         </li>
 
                         <li class="nav-item">
