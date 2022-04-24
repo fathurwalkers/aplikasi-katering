@@ -45,16 +45,25 @@ class PaketController extends Controller
             $randomNamaGambar = Str::random(6) . '.jpg';
             $gambar = $request->file('paket_gambar')->move(public_path('tampilan/img'), strtolower($randomNamaGambar));
         }
+
+        $paket_kode = "PAKET-" . strtoupper(Str::random(5));
+        $paket_harga = intval($request->paket_harga);
+        $paket_info = $request->paket_info;
+        $paket_status = $request->paket_status;
+
         $save_paket = $paket->create([
             'paket_nama' => $request->paket_nama,
             'paket_gambar' => $gambar,
-            'paket_harga' => $request->paket_harga,
-            'paket_info' => $request->paket_info,
-            'paket_kode' => $paket->paket_kode,
-            'paket_status' => $request->paket_status,
-            'created_at' => now()
+            'paket_harga' => $paket_harga,
+            'paket_info' => $paket_info,
+            'paket_kode' => $paket_kode,
+            'paket_status' => $paket_status,
+            'created_at' => now(),
             'updated_at' => now()
         ]);
+        dump($save_paket);
+        die;
+        $save_paket->save();
     }
 
     public function hapus_paket($id)
