@@ -25,6 +25,75 @@
                         <div class="col-sm-6 col-md-6 col-lg-6">
                             <button type="button" class="btn btn-md btn-success float-right" data-toggle="modal" data-target="#modaltambahdata">TAMBAH PAKET</button>
                         </div>
+                        {{-- MODAL TAMBAH DATA  --}}
+                        <div class="modal fade" id="modaltambahdata" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title text-dark" id="exampleModalLabel">Tambah Data Paket</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+
+                                    <form action="{{ route('post-tambah-paket') }}" method="POST" enctype="multipart/form-data">
+                                    @csrf
+                                    <div class="modal-body">
+
+                                        <div class="row">
+                                            <div class="col-sm-4 col-md-4 col-lg-4">
+                                                <div class="form-group">
+                                                    <label for="paket_nama" class="text-dark">Nama Paket </label>
+                                                    <input type="text" class="form-control" id="paket_nama" name="paket_nama">
+                                                    {{-- <small id="emailHelp" class="form-text text-muted">Test</small> --}}
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4 col-md-4 col-lg-4">
+                                                <div class="form-group">
+                                                    <label for="paket_harga" class="text-dark">Harga </label>
+                                                    <input type="number" class="form-control" id="paket_harga" name="paket_harga">
+                                                    {{-- <small id="emailHelp" class="form-text text-muted">Test</small> --}}
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4 col-md-4 col-lg-4">
+                                                <div class="form-group">
+                                                    <label for="paket_status" class="text-dark">Status Paket </label>
+                                                    <select class="form-control" id="paket_status" name="paket_status">
+                                                      <option value="" selected>Pilih status paket...</option>
+                                                      <option value="TERSEDIA" selected>Tersedia</option>
+                                                      <option value="KOSONG" selected>Kosong</option>
+                                                    </select>
+                                                  </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                                <div class="form-group">
+                                                    <label for="paket_gambar" class="text-dark">Banner Gambar</label>
+                                                    <input type="file" class="form-control-file" id="paket_gambar" name="paket_gambar">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                                <textarea name="paket_info" id="editordefault">
+                                                </textarea>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-info" data-dismiss="modal">Batalkan</button>
+                                        <button type="submit" class="btn btn-danger">Simpan</button>
+                                    </div>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                        {{-- END MODAL TAMBAH DATA  --}}
                     </div>
                 </div>
             </div>
@@ -78,76 +147,6 @@
                                 </div>
                             </td>
                         </tr>
-
-                        {{-- MODAL TAMBAH DATA  --}}
-                        <div class="modal fade" id="modaltambahdata" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Tambah Data Paket</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-
-                                    <form action="{{ route('post-tambah-paket') }}" method="POST" enctype="multipart/form-data">
-                                    @csrf
-                                    <div class="modal-body">
-
-                                        <div class="row">
-                                            <div class="col-sm-4 col-md-4 col-lg-4">
-                                                <div class="form-group">
-                                                    <label for="paket_nama">Nama Paket </label>
-                                                    <input type="text" class="form-control" id="paket_nama" name="paket_nama">
-                                                    {{-- <small id="emailHelp" class="form-text text-muted">Test</small> --}}
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-4 col-md-4 col-lg-4">
-                                                <div class="form-group">
-                                                    <label for="paket_harga">Harga </label>
-                                                    <input type="number" class="form-control" id="paket_harga" name="paket_harga">
-                                                    {{-- <small id="emailHelp" class="form-text text-muted">Test</small> --}}
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-4 col-md-4 col-lg-4">
-                                                <div class="form-group">
-                                                    <label for="paket_status">Status Paket </label>
-                                                    <select class="form-control" id="paket_status" name="paket_status">
-                                                      <option value="" selected>Pilih status paket...</option>
-                                                      <option value="TERSEDIA" selected>Tersedia</option>
-                                                      <option value="KOSONG" selected>Kosong</option>
-                                                    </select>
-                                                  </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col-sm-12 col-md-12 col-lg-12">
-                                                <div class="form-group">
-                                                    <label for="paket_gambar">Banner Gambar</label>
-                                                    <input type="file" class="form-control-file" id="paket_gambar" name="paket_gambar">
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col-sm-12 col-md-12 col-lg-12">
-                                                <textarea name="paket_info" id="editordefault">
-                                                </textarea>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-info" data-dismiss="modal">Batalkan</button>
-                                        <button type="submit" class="btn btn-danger">Simpan</button>
-                                    </div>
-                                    </form>
-
-                                </div>
-                            </div>
-                        </div>
-                        {{-- END MODAL TAMBAH DATA  --}}
 
                         {{-- MODAL UBAH  --}}
                         <div class="modal fade" id="modalubah{{ $item->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -263,8 +262,8 @@
 <script>
     $(document).ready( function () {
         $('#example').DataTable();
-        <?php foreach ($paket as $item) { ?>
         CKEDITOR.replace( "editordefault" );
+        <?php foreach ($paket as $item) { ?>
         CKEDITOR.replace( "editor<?php echo $item->id; ?>" );
         <?php } ?>
         CKEDITOR.document.appendStyleText( '.cke{visibility:visible;}' );
