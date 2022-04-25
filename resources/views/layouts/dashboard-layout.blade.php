@@ -35,10 +35,12 @@
             <div class="card-body pb-1 mt-3" id="navbarNav">
               <img class="card-img-top gambar img-thumbnail rounded-circle" src="{{ asset('tampilan') }}/img/yeyen.png" alt="user" />
             </div>
-            <div class="card-body mt-3 pt-0 mb-0" id="navbarNav">
-              <p class="card-text mb-0">Awaluddin</p>
-              <p class="card-text mb-2">awalrajab69@gmail.com</p>
-            </div>
+            @if ($users !== null)
+                <div class="card-body mt-3 pt-0 mb-0" id="navbarNav">
+                    <p class="card-text mb-0">{{ $users->login_nama }}</p>
+                    <p class="card-text mb-2">{{ $users->login_email }}</p>
+                </div>
+            @endif
           </div>
         </div>
         <div class="col-12 text-white mt-3 menu">
@@ -47,10 +49,11 @@
               <i class="fas fa-home my-auto"></i>
               <a class="nav-link" href="#">Menu Utama</a>
             </li>
-            <li class="nav-item d-flex px-2">
+            {{-- <li class="nav-item d-flex px-2">
               <i class="fas fa-info-circle my-auto"></i>
               <a class="nav-link" href="#">Bantuan</a>
-            </li>
+            </li> --}}
+            @if ($users !== null)
             <li class="nav-item d-flex px-2">
 
                 <i class="fas fa-sign-out-alt my-auto"></i>
@@ -62,6 +65,7 @@
                 </form>
 
             </li>
+            @endif
           </ul>
         </div>
       </div>

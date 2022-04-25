@@ -18,7 +18,7 @@ class GenerateController extends Controller
     {
         $faker = Faker::create('id_ID');
 
-        for ($i=0; $i < 50; $i++) {
+        for ($i=0; $i < 3; $i++) {
             $login_model = new Login;
             // $password = '12345';
             $username = 'user' . $i . strtoupper(Str::random(5));
@@ -52,7 +52,7 @@ class GenerateController extends Controller
     public function generate_paket()
     {
         $faker = Faker::create('id_ID');
-        for ($i=0; $i < 100; $i++) {
+        for ($i=0; $i < 3; $i++) {
             $arr_status = ["TERSEDIA", "KOSONG"];
             $randomStatus = Arr::random($arr_status);
             $paket_kode = 'PAKET-' . strtoupper(Str::random(5));
@@ -90,7 +90,7 @@ class GenerateController extends Controller
     public function generate_pemesanan()
     {
         $faker = Faker::create('id_ID');
-        for ($i=0; $i < 75; $i++) {
+        for ($i=0; $i < 3; $i++) {
 
             $pemesanan_kode = 'PESANAN-' . strtoupper(Str::random(5));
             $arr_number             = [1, 2, 3, 4, 5];

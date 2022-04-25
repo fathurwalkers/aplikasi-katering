@@ -36,16 +36,26 @@ Route::get('/pemesanan/{id}', [ClientController::class, 'pemesanan'])->name('pem
 Route::post('/pemesanan/proses/{id}', [ClientController::class, 'save_pemesanan'])->name('save-pemesanan');
 
 Route::get('/client', function () {
-
+    $users = session('data_login');
     $var_paket = Paket::all()->toArray();
     $paket1 = Arr::random($var_paket);
     $paket2 = Arr::random($var_paket);
     $paket3 = Arr::random($var_paket);
-    return view('landing-page', [
-        'paket1' => $paket1,
-        'paket2' => $paket2,
-        'paket3' => $paket3
-    ]);
+    if ($users == null) {
+        return view('landing-page', [
+            'paket1' => $paket1,
+            'paket2' => $paket2,
+            'paket3' => $paket3,
+            'users' => $users
+        ]);
+    } else {
+        return view('landing-page', [
+            'paket1' => $paket1,
+            'paket2' => $paket2,
+            'paket3' => $paket3,
+            'users' => $users
+        ]);
+    }
     // return redirect()->route('admin');
 // })->name('landing-page');
 })->name('user-page');

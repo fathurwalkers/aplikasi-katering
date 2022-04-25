@@ -36,12 +36,14 @@ class ClientController extends Controller
 
     public function detail_paket(Request $request, $id)
     {
+        $users = session('data_login');
         $paket = Paket::where('id', $id)->first();
         if ($paket == NULL) {
             return redirect()->route('client-daftar-paket')->with('status', 'Maaf, paket yang anda pilih tidak tersedia.');
         }
         return view('client.detail-paket', [
-            'paket' => $paket
+            'paket' => $paket,
+            'users' => $users
         ]);
     }
 
@@ -59,7 +61,8 @@ class ClientController extends Controller
             return redirect()->route('daftar-paket')->with('status', 'Paket yang anda inginkan tidak tersedia. ');
         } else {
             return view('client.pemesanan', [
-                'paket' => $paket
+                'paket' => $paket,
+                'users' => $users
             ]);
         }
     }
