@@ -137,7 +137,7 @@
                             <td width="15%">
                                 <div class="btn-group d-flex justify-content-center">
 
-                                    <button class="btn btn-info btn-sm mr-1" data-toggle="modal" data-target="#modalhapus{{ $item->id }}">LIHAT</button>
+                                    <button class="btn btn-info btn-sm mr-1" data-toggle="modal" data-target="#modallihat{{ $item->id }}">LIHAT</button>
 
                                     <button class="btn btn-primary btn-sm mr-1" data-toggle="modal" data-target="#modalubah{{ $item->id }}">UBAH</button>
 
@@ -147,6 +147,45 @@
                                 </div>
                             </td>
                         </tr>
+
+                        {{-- MODAL LIHAT  --}}
+                        <div class="modal fade" id="modallihat{{ $item->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Data Pemesanan - {{ $item->pemesanan_koed }}</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                                <b>INFORMASI PAKET [{{ $item->paket_kode }}]</b>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-4 col-md-4 col-lg-4">
+                                                Nama Paket <br>
+                                                Harga <br>
+                                                Status <br>
+                                                Kode Paket <br>
+                                            </div>
+                                            <div class="col-sm-8 col-md-8 col-lg-8">
+                                                : {{ $item->paket_nama }} <br>
+                                                : Rp. {{ number_format($item->paket_harga,2,',','.') }} <br>
+                                                : {{ $item->paket_status }} <br>
+                                                : {{ $item->paket_kode }} <br>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-info" data-dismiss="modal">TUTUP</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {{-- END MODAL LIHAT --}}
 
                         {{-- MODAL UBAH  --}}
                         <div class="modal fade" id="modalubah{{ $item->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
