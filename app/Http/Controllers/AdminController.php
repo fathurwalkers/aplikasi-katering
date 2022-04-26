@@ -16,10 +16,20 @@ class AdminController extends Controller
 {
     public function index()
     {
+        $login = Login::all()->count();
+        $paket = Paket::all()->count();
+        $pemesanan_selesai = Pemesanan::where('pemesanan_status', 'SELESAI')->count();
+        $pemesanan_proses = Pemesanan::where('pemesanan_status', 'PROSES')->count();
         $users = session('data_login');
         $level_user = $users->login_level;
         if ($level_user == 'admin') {
-            return view('admin.index');
+            return view('admin.index', [
+                'users' => $users,
+                'login' => $login,
+                'paket' => $paket,
+                'pemesanan_selesai' => $pemesanan_selesai,
+                'pemesanan_proses' => $pemesanan_proses,
+            ]);
         } else {
             return redirect()->route('login-admin')->with('status', 'Hanya administrator yang dapat login');
         }
