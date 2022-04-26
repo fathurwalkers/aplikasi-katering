@@ -61,7 +61,7 @@
                             </td>
                             <td>
                                 <div class="btn-group d-flex justify-content-center">
-                                <a href="#" class="btn btn-info btn-sm mr-1">LIHAT</a>
+                                <a href="#" class="btn btn-info btn-sm mr-1" data-toggle="modal" data-target="#modallihat{{ $item->id }}">LIHAT</a>
                                     {{-- <a href="#" class="btn btn-primary btn-sm mr-1">UBAH</a> --}}
                                     <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modalhapus{{ $item->id }}">
                                         HAPUS
@@ -70,6 +70,48 @@
                             </td>
                         </tr>
 
+                        {{-- MODAL LIHAT  --}}
+                        <div class="modal fade" id="modallihat{{ $item->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Data Pemesanan - {{ $item->pemesanan_koed }}</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                                <b>INFORMASI PEMESANAN [{{ $item->pemesanan_kode }}]</b>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-4 col-md-4 col-lg-4">
+                                                Kode Pemesanan <br>
+                                                Pemesan <br>
+                                                Paket <br>
+                                                Jumlah Paket <br>
+                                                Waktu/Tanggal <br>
+                                            </div>
+                                            <div class="col-sm-8 col-md-8 col-lg-8">
+                                                : {{ $item->pemesanan_kode }} <br>
+                                                : {{ $item->login->login_nama }} <br>
+                                                : {{ Str::limit($item->paket->paket_nama, 20) }} <br>
+                                                : {{ $item->pemesanan_jumlah }} <br>
+                                                : {{ date("d-M-Y", strtotime($item->updated_at)) }} <br>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-info" data-dismiss="modal">TUTUP</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {{-- END MODAL LIHAT --}}
+
+                        {{-- MODAL HAPUS --}}
                         <div class="modal fade" id="modalhapus{{ $item->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -94,6 +136,7 @@
                                 </div>
                             </div>
                         </div>
+                        {{-- END MODAL HAPUS --}}
 
                         @endforeach
 
