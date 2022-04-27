@@ -33,11 +33,20 @@
 @endsection
 
 @section('main-content')
-
-<div class="row">
-    <div class="col-12 mt-2 d-flex justify-content-center bg-white mt-3 mb-2">
-        <h2 class="text-dark"><b>DAFTAR PESANAN</b></h2>
+{{-- <div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+        <button type="button" onclick="location.href = '{{ route('daftar-paket') }}';" class="btn btn-sm btn-danger shadow mr-1">Kembali</button>
     </div>
+</div> --}}
+<div class="row">
+    <div class="col-8 mt-2 bg-white mt-3 mb-2">
+        <h4 class="text-dark"><b>DAFTAR PESANAN</b></h4>
+    </div>
+    <div class="col-4 mt-2 bg-white mt-3 mb-2 float-end ml-auto d-flex justify-content-end">
+        <button type="button" onclick="location.href = '{{ route('dashboard') }}';" class="btn btn-sm btn-danger shadow mr-1">Kembali</button>
+    </div>
+</div>
+<div class="row">
     @if (session('status'))
         <div class="col-12 mt-2 d-flex justify-content-center">
             <div class="alert alert-primary">
@@ -45,22 +54,6 @@
             </div>
         </div>
         <br>
-        {{-- <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-animation="true" data-delay="5000" data-autohide="true">
-            <div class="toast-header">
-                <span class="rounded mr-2 bg-primary" style="width: 15px;height: 15px"></span>
-
-                <strong class="mr-auto">Notifikasi</strong>
-                <small>1 menit yang lalu</small>
-                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="toast-body">
-                Halo, ini pesan notifikasi toast.
-                <br/>
-                www.malasngoding.com
-            </div>
-        </div> --}}
     @endif
 </div>
 
@@ -118,7 +111,7 @@
                     </div>
                 {{-- </div> --}}
                 <div class="d-flex justify-content-end">
-                    <a href="{{ route('client-detail-paket', $item->id) }}" class="btn btn-sm btn-danger shadow">Batalkan Pesanan</a>
+                    <button type="button" class="btn btn-sm btn-danger shadow">Batalkan Pesanan</button>
                 </div>
             </div>
         </div>

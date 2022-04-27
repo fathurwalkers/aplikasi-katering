@@ -14,6 +14,7 @@ use App\Models\Pemesanan;
 
 class ClientController extends Controller
 {
+
     public function index()
     {
         $users = session('data_login');
@@ -67,9 +68,13 @@ class ClientController extends Controller
 
         $paket_id = $id;
         $paket = Paket::where('id', $paket_id)->firstOrFail();
+
         if ($paket == null) {
             return redirect()->route('daftar-paket')->with('status', 'Paket yang anda inginkan tidak tersedia. ');
         } else {
+            if ($paket->paket_status == "KOSONG") {
+                return redirect()->route('client-daftar-paket')->with('status', 'Maaf, paket yang anda pilih sedang kosong, silahkan memilih paket lain.');
+            }
             return view('client.pemesanan', [
                 'paket' => $paket,
                 'users' => $users
@@ -101,6 +106,7 @@ class ClientController extends Controller
 
         $pengguna           = Login::where('id', $users->id)->firstOrFail();
         $paket              = Paket::where('id', $paket_id)->firstOrFail();
+
         $pemesanan          = new Pemesanan;
 
         $kode1              = "PESANAN-";

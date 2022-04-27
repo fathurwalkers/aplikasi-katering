@@ -38,6 +38,7 @@
                             Nama Paket <br>
                             Harga <br>
                             Kode Paket <br>
+                            Status Paket <br>
                             Nama Pemesan <br>
                             No. HP <br>
                             Email <br>
@@ -47,10 +48,11 @@
                             : {{ Str::limit($paket->paket_nama, 15) }} <br>
                             : {{ $paket->paket_harga }} <br>
                             : {{ $paket->paket_kode }} <br>
-                            : {{ $paket->paket_harga }} <br>
-                            : {{ $paket->paket_harga }} <br>
-                            : {{ $paket->paket_harga }} <br>
-                            : {{ $paket->paket_harga }} <br>
+                            : {{ $paket->paket_status }} <br>
+                            : {{ $users->login_nama }} <br>
+                            : {{ $paket->login_telepon }} <br>
+                            : {{ $paket->login_email }} <br>
+                            : {{ $paket->login_alamat }} <br>
                         </div>
                     </div>
 

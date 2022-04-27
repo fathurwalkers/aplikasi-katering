@@ -43,7 +43,7 @@
                     </p>
                 </div>
                 <div class="d-flex justify-content-end">
-                    <a href="{{ route('pemesanan', '1') }}" class="btn btn-primary px-3">Pesan sekarang</a>
+                    <a href="{{ route('pemesanan', $paket->id) }}" class="btn btn-primary px-3">Pesan sekarang</a>
                 </div>
             </div>
         </div>

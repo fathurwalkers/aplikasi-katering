@@ -25,7 +25,7 @@
     <div class="col-sm-6 mt-1">
         <div class="card mb-2 bgheader">
             <div class="card-title">
-                <h5 class="mt-2 text-center">INFORMASI PAKET</h5>
+                <h5 class="mt-2 text-center">CLIENT PANEL</h5>
             </div>
         </div>
     </div>
