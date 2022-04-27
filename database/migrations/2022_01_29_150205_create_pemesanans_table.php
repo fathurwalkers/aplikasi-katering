@@ -13,7 +13,7 @@ class CreatePemesanansTable extends Migration
 
             $table->string('pemesanan_kode')->nullable();
             $table->string('pemesanan_jumlah')->nullable();
-            $table->string('pemesanan_status')->nullable(); // PENDING - SUKSES
+            $table->string('pemesanan_status')->nullable(); // PENDING - SUKSES - PROSES - BERLANGSUNG
 
             $table->unsignedBigInteger('login_id')->nullable();
             $table->foreign('login_id')->references('id')->on('login')->onDelete('cascade');

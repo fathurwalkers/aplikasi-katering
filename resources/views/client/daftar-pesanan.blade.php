@@ -118,7 +118,7 @@
                     </div>
                 {{-- </div> --}}
                 <div class="d-flex justify-content-end">
-                    <a href="{{ route('client-detail-paket', $item->id) }}" class="btn btn-sm btn-primary shadow">Selengkapnya</a>
+                    <a href="{{ route('client-detail-paket', $item->id) }}" class="btn btn-sm btn-danger shadow">Batalkan Pesanan</a>
                 </div>
             </div>
         </div>
