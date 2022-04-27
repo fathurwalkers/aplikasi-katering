@@ -24,6 +24,16 @@ class ClientController extends Controller
         return view('client.index');
     }
 
+    public function client_daftar_pesanan()
+    {
+        $users = session('data_login');
+        $pesanan = Pemesanan::where('login_id', $users->id)->latest()->paginate(10);
+        return view('client.daftar-pesanan', [
+            'users' => $users,
+            'pesanan' => $pesanan,
+        ]);
+    }
+
     public function daftar_paket()
     {
         $users = session('data_login');

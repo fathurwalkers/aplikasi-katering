@@ -62,6 +62,7 @@ Route::get('/client', function () {
 
 Route::group(['prefix' => '/client/auth', 'middleware' => 'ceklogin'], function () {
     Route::get('/', [ClientController::class, 'index'])->name('dashboard');
+    Route::get('/daftar-pesanan', [ClientController::class, 'client_daftar_pesanan'])->name('client-daftar-pesanan');
     Route::get('/towhatsapp', [ClientController::class, 'towhatsapp'])->name('towhatsapp');
 });
 
