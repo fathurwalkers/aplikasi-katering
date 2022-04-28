@@ -25,6 +25,16 @@ class ClientController extends Controller
         return view('client.index');
     }
 
+    public function client_batalkan_pesanan(Request $request, $id)
+    {
+        $pesanan = Pemesanan::findOrFail($id);
+        $update_pesanan = $pesanan->update([
+            'pemesanan_status' => 'PENDING',
+            'updated_at' => now(),
+        ]);
+        return redirect()->route('client-daftar-pesanan')->with('status', 'Permintaan pembatalan pesanan anda sedang di proses.');
+    }
+
     public function client_daftar_pesanan()
     {
         $users = session('data_login');

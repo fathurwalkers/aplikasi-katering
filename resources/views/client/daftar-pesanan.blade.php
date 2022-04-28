@@ -111,7 +111,12 @@
                     </div>
                 {{-- </div> --}}
                 <div class="d-flex justify-content-end">
-                    <button type="button" class="btn btn-sm btn-danger shadow">Batalkan Pesanan</button>
+                    @if ($item->pemesanan_status == "PROSES")
+                        <form action="{{ route('client-batalkan-pesanan', $item->id) }}" method="POST">
+                            @csrf
+                            <button type="submit" class="btn btn-sm btn-danger shadow">Batalkan Pesanan</button>
+                        </form>
+                    @endif
                 </div>
             </div>
         </div>

@@ -34,6 +34,7 @@ Route::get('/daftar-paket', [ClientController::class, 'daftar_paket'])->name('cl
 Route::get('/detail-paket/{id}', [ClientController::class, 'detail_paket'])->name('client-detail-paket');
 Route::get('/pemesanan/{id}', [ClientController::class, 'pemesanan'])->name('pemesanan');
 Route::post('/pemesanan/proses/{id}', [ClientController::class, 'save_pemesanan'])->name('save-pemesanan');
+Route::post('/pemesanan/batalkan/{id}', [ClientController::class, 'client_batalkan_pesanan'])->name('client-batalkan-pesanan');
 
 Route::get('/client', function () {
     $users = session('data_login');
