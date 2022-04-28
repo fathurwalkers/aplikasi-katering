@@ -57,11 +57,45 @@
                                     @case("PENDING")
                                         <button type="button" class="btn btn-sm btn-danger">PENDING</button>
                                         @break
+                                    @case("BERLANGSUNG")
+                                        <button type="button" class="btn btn-sm" style="background-color:aqua;">BERLANGSUNG</button>
+                                        @break
+                                    @case("DIBATALKAN")
+                                        <button type="button" class="btn btn-sm" style="background-color:rgb(187, 0, 72);color:white;">DIBATALKAN</button>
+                                        @break
                                 @endswitch
                             </td>
                             <td>
-                                <div class="btn-group d-flex justify-content-center">
-                                <a href="#" class="btn btn-info btn-sm mr-1" data-toggle="modal" data-target="#modallihat{{ $item->id }}">LIHAT</a>
+                                <div class="d-flex justify-content-center">
+
+                                    @if ($item->pemesanan_status == "PENDING")
+                                    <form action="{{ route('admin-batalkan-pesanan', $item->id) }}" method="POST">
+                                        @csrf
+                                        <button type="submit" class="btn btn-sm mr-1" style="background-color:rgb(255, 197, 37);">
+                                            BATALKAN
+                                        </button>
+                                    </form>
+                                    @endif
+
+                                    @if ($item->pemesanan_status == "PROSES")
+                                    <form action="{{ route('admin-konfirmasi-pesanan', $item->id) }}" method="POST">
+                                        @csrf
+                                        <button type="submit" class="btn btn-sm mr-1" style="background-color:rgb(0, 174, 255);">
+                                            KONFIRMASI
+                                        </button>
+                                    </form>
+                                    @endif
+
+                                    @if ($item->pemesanan_status == "BERLANGSUNG")
+                                    <form action="{{ route('admin-selesaikan-pesanan', $item->id) }}" method="POST">
+                                        @csrf
+                                        <button type="submit" class="btn btn-sm mr-1" style="background-color:rgb(105, 255, 19);">
+                                            SELESAI
+                                        </button>
+                                    </form>
+                                    @endif
+
+                                    <a href="#" class="btn btn-info btn-sm mr-1" data-toggle="modal" data-target="#modallihat{{ $item->id }}">LIHAT</a>
                                     {{-- <a href="#" class="btn btn-primary btn-sm mr-1">UBAH</a> --}}
                                     <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modalhapus{{ $item->id }}">
                                         HAPUS

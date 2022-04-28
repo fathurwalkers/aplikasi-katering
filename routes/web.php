@@ -81,6 +81,9 @@ Route::group(['prefix' => '/admin', 'middleware' => 'cekloginadmin'], function (
     // Pemesanan
     Route::get('/daftar-pemesanan', [PemesananController::class, 'daftar_pemesanan'])->name('daftar-pemesanan');
     Route::post('/pemesanan/hapus/{id}', [PemesananController::class, 'hapus_pemesanan'])->name('hapus-pemesanan');
+    Route::post('/pemesanan/batalkan/{id}', [PemesananController::class, 'admin_batalkan_pesanan'])->name('admin-batalkan-pesanan');
+    Route::post('/pemesanan/konfirmasi/{id}', [PemesananController::class, 'admin_konfirmasi_pesanan'])->name('admin-konfirmasi-pesanan');
+    Route::post('/pemesanan/selesaikan/{id}', [PemesananController::class, 'admin_selesaikan_pesanan'])->name('admin-selesaikan-pesanan');
 
     // Pengguna (User)
     Route::get('/daftar-user', [AdminController::class, 'daftar_user'])->name('daftar-user');

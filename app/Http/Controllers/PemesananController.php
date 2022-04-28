@@ -11,6 +11,7 @@ use Illuminate\Support\Arr;
 use App\Models\Login;
 use App\Models\Paket;
 use App\Models\Pemesanan;
+use Symfony\Component\HttpFoundation\RateLimiter\RequestRateLimiterInterface;
 
 class PemesananController extends Controller
 {
@@ -20,6 +21,36 @@ class PemesananController extends Controller
         return view('admin.daftar-pemesanan', [
             'pemesanan' => $pemesanan
         ]);
+    }
+
+    public function admin_konfirmasi_pesanan(Request $request, $id)
+    {
+        $pesanan = Pemesanan::findOrFail($id);
+        $update_pesanan = $pesanan->update([
+            'pemesanan_status' => 'BERLANGSUNG',
+            'updated_at' => now(),
+        ]);
+        return redirect()->route('daftar-pemesanan')->with('status', 'Pesanan telah dikonfirmasi.');
+    }
+
+    public function admin_batalkan_pesanan(Request $request, $id)
+    {
+        $pesanan = Pemesanan::findOrFail($id);
+        $update_pesanan = $pesanan->update([
+            'pemesanan_status' => 'DIBATALKAN',
+            'updated_at' => now(),
+        ]);
+        return redirect()->route('daftar-pemesanan')->with('status', 'Pesanan telah dibatalkan.');
+    }
+
+    public function admin_selesaikan_pesanan(Request $request, $id)
+    {
+        $pesanan = Pemesanan::findOrFail($id);
+        $update_pesanan = $pesanan->update([
+            'pemesanan_status' => 'SELESAI',
+            'updated_at' => now(),
+        ]);
+        return redirect()->route('daftar-pemesanan')->with('status', 'Pesanan telah selesai.');
     }
 
     public function hapus_pemesanan($id)

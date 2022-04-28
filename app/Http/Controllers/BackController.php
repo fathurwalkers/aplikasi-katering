@@ -77,15 +77,6 @@ class BackController extends Controller
                     }
                 }
                 break;
-            case 'bidan':
-                $cek_password = Hash::check($request->login_password, $data_login->login_password);
-                if ($data_login) {
-                    if ($cek_password) {
-                        $users = session(['data_login' => $data_login]);
-                        return redirect()->route('dashboard')->with('status', 'Berhasil Login!');
-                    }
-                }
-                break;
             case 'user':
                 $cek_password = Hash::check($request->login_password, $data_login->login_password);
                 if ($data_login) {
