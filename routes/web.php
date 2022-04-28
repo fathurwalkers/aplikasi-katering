@@ -80,6 +80,7 @@ Route::group(['prefix' => '/admin', 'middleware' => 'cekloginadmin'], function (
 
     // Pemesanan
     Route::get('/daftar-pemesanan', [PemesananController::class, 'daftar_pemesanan'])->name('daftar-pemesanan');
+    Route::post('/pemesanan/hapus/{id}', [PemesananController::class, 'hapus_pemesanan'])->name('hapus-pemesanan');
 
     // Pengguna (User)
     Route::get('/daftar-user', [AdminController::class, 'daftar_user'])->name('daftar-user');

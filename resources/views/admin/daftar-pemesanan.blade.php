@@ -128,7 +128,7 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-info" data-dismiss="modal">Tidak</button>
-                                        <form action="{{ route('hapus-paket', $item->id) }}" method="POST">
+                                        <form action="{{ route('hapus-pemesanan', $item->id) }}" method="POST">
                                             @csrf
                                             <button type="submit" class="btn btn-danger">Hapus</button>
                                         </form>
