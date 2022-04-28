@@ -19,18 +19,19 @@ class DatabaseSeeder extends Seeder
         // ADMIN
         $token = Str::random(16);
         $role = "admin";
-        $hashPassword = Hash::make('jancok', [
+        $hashPassword = Hash::make('admin', [
             'rounds' => 12,
         ]);
         $hashToken = Hash::make($token, [
             'rounds' => 12,
         ]);
         Login::create([
-            'login_nama' => 'FathurWalkers',
-            'login_username' => 'fathurwalkers',
+            'login_nama' => 'Administrator',
+            'login_username' => 'admin',
             'login_password' => $hashPassword,
-            'login_email' => 'fathurwalkers44@gmail.com',
-            'login_telepon' => '085342072185',
+            'login_email' => 'admin_yeyen_katering@gmail.com',
+            'login_telepon' => '082203942910',
+            'login_alamat' => 'Jl. Bakti Abri, Bukit Wolio Indah, Kota Baubau.',
             'login_token' => $hashToken,
             'login_level' => $role,
             'login_status' => "verified",
@@ -52,30 +53,7 @@ class DatabaseSeeder extends Seeder
             'login_password' => $hashPassword,
             'login_email' => 'ewit@gmail.com',
             'login_telepon' => '085342072185',
-            'login_token' => $hashToken,
-            'login_level' => $role,
-            'login_status' => "verified",
-            'created_at' => now(),
-            'updated_at' => now()
-        ]);
-
-        // ---------------------------------------------------------------------------
-
-        // bidan
-        $token = Str::random(16);
-        $role = "bidan";
-        $hashPassword = Hash::make('bidan', [
-            'rounds' => 12,
-        ]);
-        $hashToken = Hash::make($token, [
-            'rounds' => 12,
-        ]);
-        Login::create([
-            'login_nama' => 'bidan 1',
-            'login_username' => 'bidan',
-            'login_password' => $hashPassword,
-            'login_email' => 'bidan@gmail.com',
-            'login_telepon' => '085342072185',
+            'login_alamat' => 'Jl. Bakti Abri, Bukit Wolio Indah, Kota Baubau.',
             'login_token' => $hashToken,
             'login_level' => $role,
             'login_status' => "verified",
@@ -100,6 +78,7 @@ class DatabaseSeeder extends Seeder
             'login_password' => $hashPassword,
             'login_email' => 'user1@gmail.com',
             'login_telepon' => '085342072185',
+            'login_alamat' => 'Jl. Bakti Abri, Bukit Wolio Indah, Kota Baubau.',
             'login_token' => $hashToken,
             'login_level' => $role,
             'login_status' => "verified",
@@ -125,6 +104,7 @@ class DatabaseSeeder extends Seeder
             'login_email' => 'user2@gmail.com',
             'login_telepon' => '085342072185',
             'login_token' => $hashToken,
+            'login_alamat' => 'Jl. Bakti Abri, Bukit Wolio Indah, Kota Baubau.',
             'login_level' => $role,
             'login_status' => "verified",
             'created_at' => now(),
